@@ -1,0 +1,25 @@
+body{
+	background-color: #F5DEB3
+}
+
+h1 {
+	font-family: "Tahoma";
+    font-size: 40;
+    font-weight: 400;
+    color: #696969;
+    text-align: center;
+}
+h2{
+	font-family: "Tahoma";
+    font-size: 28;
+    font-weight: 400;
+    color: #808080;
+    text-align: center;
+}
+h3{
+	font-family: "Tahoma";
+    font-size: 14;
+    font-weight: 400;
+    color: #999999;
+    text-align: center;
+}

@@ -1,0 +1,425 @@
+{
+  "dataSul": [
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Fundamental 2º Ano",
+      "evasao": "-119348"
+    },
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Fundamental 3º Ano",
+      "evasao": "8598"
+    },
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Fundamental 4º Ano",
+      "evasao": "29236"
+    },
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Fundamental 5º Ano",
+      "evasao": "5989"
+    },
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Fundamental 6º Ano",
+      "evasao": "-61310"
+    },
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Fundamental 7º Ano",
+      "evasao": "45795"
+    },
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Fundamental 8º Ano",
+      "evasao": "55305"
+    },
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Fundamental 9º Ano",
+      "evasao": "48525"
+    },
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Médio - 1ª Série",
+      "evasao": "-37961"
+    },
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Médio - 2ª Série",
+      "evasao": "123697"
+    },
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Médio - 3ª Série",
+      "evasao": "52490"
+    },
+    {
+      "ano": "2008",
+      "nomeCurso": "Ensino Médio - 4ª Série",
+      "evasao": "278856"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Fundamental 2º Ano",
+      "evasao": "-56745"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Fundamental 3º Ano",
+      "evasao": "-4645"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Fundamental 4º Ano",
+      "evasao": "13877"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Fundamental 5º Ano",
+      "evasao": "2802"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Fundamental 6º Ano",
+      "evasao": "-66333"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Fundamental 7º Ano",
+      "evasao": "35480"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Fundamental 8º Ano",
+      "evasao": "49228"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Fundamental 9º Ano",
+      "evasao": "50092"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Médio - 1ª Série",
+      "evasao": "-28191"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Médio - 2ª Série",
+      "evasao": "122721"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Médio - 3ª Série",
+      "evasao": "54080"
+    },
+    {
+      "ano": "2009",
+      "nomeCurso": "Ensino Médio - 4ª Série",
+      "evasao": "281759"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Fundamental 2º Ano",
+      "evasao": "-54706"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Fundamental 3º Ano",
+      "evasao": "10909"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Fundamental 4º Ano",
+      "evasao": "3578"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Fundamental 5º Ano",
+      "evasao": "6622"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Fundamental 6º Ano",
+      "evasao": "-59143"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Fundamental 7º Ano",
+      "evasao": "36458"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Fundamental 8º Ano",
+      "evasao": "50809"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Fundamental 9º Ano",
+      "evasao": "51945"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Médio - 1ª Série",
+      "evasao": "-18951"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Médio - 2ª Série",
+      "evasao": "122112"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Médio - 3ª Série",
+      "evasao": "54441"
+    },
+    {
+      "ano": "2010",
+      "nomeCurso": "Ensino Médio - 4ª Série",
+      "evasao": "273714"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Fundamental 2º Ano",
+      "evasao": "-47273"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Fundamental 3º Ano",
+      "evasao": "7582"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Fundamental 4º Ano",
+      "evasao": "15060"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Fundamental 5º Ano",
+      "evasao": "-3704"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Fundamental 6º Ano",
+      "evasao": "-45082"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Fundamental 7º Ano",
+      "evasao": "25022"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Fundamental 8º Ano",
+      "evasao": "50677"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Fundamental 9º Ano",
+      "evasao": "53264"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Médio - 1ª Série",
+      "evasao": "-15854"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Médio - 2ª Série",
+      "evasao": "121375"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Médio - 3ª Série",
+      "evasao": "56954"
+    },
+    {
+      "ano": "2011",
+      "nomeCurso": "Ensino Médio - 4ª Série",
+      "evasao": "270019"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Fundamental 2º Ano",
+      "evasao": "-35598"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Fundamental 3º Ano",
+      "evasao": "-2592"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Fundamental 4º Ano",
+      "evasao": "15774"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Fundamental 5º Ano",
+      "evasao": "510"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Fundamental 6º Ano",
+      "evasao": "-45531"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Fundamental 7º Ano",
+      "evasao": "25091"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Fundamental 8º Ano",
+      "evasao": "56552"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Fundamental 9º Ano",
+      "evasao": "30269"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Médio - 1ª Série",
+      "evasao": "-22019"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Médio - 2ª Série",
+      "evasao": "115185"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Médio - 3ª Série",
+      "evasao": "54600"
+    },
+    {
+      "ano": "2012",
+      "nomeCurso": "Ensino Médio - 4ª Série",
+      "evasao": "268148"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Fundamental 2º Ano",
+      "evasao": "-18390"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Fundamental 3º Ano",
+      "evasao": "-21789"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Fundamental 4º Ano",
+      "evasao": "18898"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Fundamental 5º Ano",
+      "evasao": "3244"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Fundamental 6º Ano",
+      "evasao": "-44421"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Fundamental 7º Ano",
+      "evasao": "21680"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Fundamental 8º Ano",
+      "evasao": "40746"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Fundamental 9º Ano",
+      "evasao": "42950"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Médio - 1ª Série",
+      "evasao": "-11828"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Médio - 2ª Série",
+      "evasao": "108809"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Médio - 3ª Série",
+      "evasao": "54963"
+    },
+    {
+      "ano": "2013",
+      "nomeCurso": "Ensino Médio - 4ª Série",
+      "evasao": "273091"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Fundamental 2º Ano",
+      "evasao": "-14401"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Fundamental 3º Ano",
+      "evasao": "-30819"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Fundamental 4º Ano",
+      "evasao": "20936"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Fundamental 5º Ano",
+      "evasao": "1032"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Fundamental 6º Ano",
+      "evasao": "-39659"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Fundamental 7º Ano",
+      "evasao": "22903"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Fundamental 8º Ano",
+      "evasao": "38684"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Fundamental 9º Ano",
+      "evasao": "31632"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Médio - 1ª Série",
+      "evasao": "-15804"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Médio - 2ª Série",
+      "evasao": "112723"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Médio - 3ª Série",
+      "evasao": "52642"
+    },
+    {
+      "ano": "2014",
+      "nomeCurso": "Ensino Médio - 4ª Série",
+      "evasao": "272593"
+    }
+  ]
+}
+

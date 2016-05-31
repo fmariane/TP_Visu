@@ -1,5 +1,5 @@
 body{
-	background-color: #F5DEB3
+	background-color: #FFF8DC
 }
 
 h1 {
@@ -16,12 +16,12 @@ h2{
     color: #808080;
     text-align: center;
 }
-h3{
+footer {
 	font-family: "Tahoma";
     font-size: 14;
     font-weight: 400;
     color: #999999;
-    text-align: center;
+    text-align: right;
 }
 
 
@@ -30,8 +30,8 @@ rect.borda {
     stroke-width:2px;   
 }
 text.legenda {
-    font-size: 9pt;
-    font-family: Consolas, courier;
+    font-size: 7pt;
+    font-family: "Tahoma";
     color: #808080;
 }
 text.eixoAno {
@@ -39,4 +39,26 @@ text.eixoAno {
 }
 text.eixoNomeCurso {
     color: #808080;
+}
+
+
+#evasaoNorte {
+    position: relative;
+    float: left;
+}
+#evasaoNordeste {
+    position: relative;
+    float: left;
+}
+#evasaoCentroOeste {
+    position: relative;
+    float: left;
+}
+#evasaoSudeste {
+    position: relative;
+    float: left;
+}
+#evasaoSul {
+    position: relative;
+    float: left;
 }

@@ -1,132 +1,118 @@
-var margem = {top: 50, right: 0, bottom: 100, left: 240};
-var largura = 1000 - margem.left - margem.right; 
-var altura = 480 - margem.top - margem.bottom;
-var grid = Math.floor(largura/24),
-var larguraLegenda = grid*2,
-var itensLegenda = 9,
-var cores = ["#081D58", "#253494", "#225EA8", "#1D91C0", "#FFFFFF", "#E20000", "#FF6666", "#FF9999","#FFCBCB"], // alternatively colorbrewer.YlGnBu[9]
-var anos = ["2008", "2009", "2010", "2011", "2012", "2013", "2014"],
-var nomeCursos = ["Ensino Fundamental 2º Ano", "Ensino Fundamental 3º Ano", "Ensino Fundamental 4º Ano", "Ensino Fundamental 5º Ano", "Ensino Fundamental 6º Ano", "Ensino Fundamental 7º Ano", "Ensino Fundamental 8º Ano", "Ensino Fundamental 9º Ano", "Ensino Médio - 1ª Série", "Ensino Médio - 2ª Série", "Ensino Médio - 3ª Série"];
-var dados = ["evasaoNorte.csv", "evasaoNordeste.csv", "evasaoCentroOeste.csv", "evasaoSudeste.csv", "evasaoSul.csv"];
-  
-
-//////////////////////////////////////
-//// PRÉ PROCESSAMENTO DOS DADOS ////
-////////////////////////////////////
-d3.csv(dados[0], function(error, dado){
-  
-  if (error) 
-    throw error;
-
-  dado.forEach(function(d){
-    d.ano = +d.ano; // Converte coluna para número
-    d.nomeCurso = +d.nomeCurso; // Converte coluna para número
-    d.evasao = +d.evasao; // Converte coluna para número    
-  }); 
-  
-  Main(dado);
-  
-});
+var margem = { top: 50, right: 0, bottom: 100, left: 35 };
+var largura = 960 - margem.left - margem.right;
+var altura = 300 - margem.top - margem.bottom;
+var tamanhoGrid = Math.floor(largura / 45);
+var tamanhoLegenda = tamanhoGrid*1.28;
+var elementosLegenda = 9;
+var cores = ["#6060F7", "#8080F8", "#AAAAF9", "#CCCCFA", "#FFEDDE", "#FFCCCC", "#FFAAAA", "#FF8080","#FF6060"]; 
+var anos = ["2008", "2009", "2010", "2011", "2012", "2013", "2014"];
+var cursos = ["EF2", "EF3", "EF4", "EF5", "EF6", "EF7", "EF8", "EF9", "EM1", "EM2", "EM3"];
+var basesDados = ["data/evasaoNorte.tsv", "data/evasaoNordeste.tsv", "data/evasaoCentroOeste.tsv", "data/evasaoSudeste.tsv", "data/evasaoSul.tsv"];
 
 
-////////////////////////////////////
-//// CRIAÇÃO DAS VISUALIZAÇÕES ////
-//////////////////////////////////
-function CriaHeatMap(dados, container) {
-  
+var heatmapChart = function(tsvFile, container) {
+  //////////////////////////////////////
+  //// PRÉ PROCESSAMENTO DOS DADOS ////
+  //////////////////////////////////// 
+  d3.tsv(tsvFile,
+  function(d) {
+     return {
+      ano: +d.ano,
+      nomeCurso: +d.nomeCurso,
+      evasao: +d.evasao
+    };
+  });
+
+
+  ////////////////////////////////////
+  //// CRIAÇÃO DAS VISUALIZAÇÕES ////
+  //////////////////////////////////
   var svg = d3.select(container).append("svg")
-    .attr("width", largura + margem.left + margem.right)
-    .attr("height", altura + margem.top + margem.bottom)
+    .attr("width", 230 + margem.left + margem.right)
+    .attr("height", 150 + margem.top + margem.bottom)
     .append("g")
-    .attr("transform", "translate(" + margem.left + "," + margem.top  + ")");
+    .attr("transform", "translate(" + margem.left + "," + margem.top + ")");
 
-}
-
-
-////////////////////////////////////
-//// DESENHO DAS VISUALIZAÇÕES ////
-//////////////////////////////////
-function DesenhaHeatMap(container) {
-    var dados = d3.select(container)
-    .selectAll("rect")
-    .data();
-    
-  var svg = d3.select(container)
-    .select("svg g");
-    
-
-  var anoLabels = svg.selectAll(".anoLabel")
-    .data(anos)
-    .enter().append("text");
-    .text(function (d) { return d; })
+        
+  ////////////////////////////////////
+  //// DESENHO DAS VISUALIZAÇÕES ////
+  //////////////////////////////////
+  d3.tsv(tsvFile,
+  function(error, data) {
+     var anoLabels = svg.selectAll(".anoLabel")
+      .data(anos)
+      .enter().append("text")
+        .text(function (d) { return d; })
         .attr("x", 0)
-        .attr("y", function (d, i) { return i * grid; })
+        .attr("y", function (d, i) { return i * tamanhoGrid; })
         .style("text-anchor", "end")
-        .attr("transform", "translate(-6," + grid / 1.5 + ")")
+        .attr("transform", "translate(-6," + tamanhoGrid / 1.5 + ")")
         .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "anoLabel legenda axis eixoAno" : "anoLabel legenda axis"); });
 
-  var nomeCursoLabels = svg.select(".nomeCursoLabel")
-    .data(nomeCursos)
-    .enter().append("text");
-    .text(function(d) { return d; })
-        .attr("x", function(d, i) { return i * grid; })
+  var timeLabels = svg.selectAll(".timeLabel")
+      .data(cursos)
+      .enter().append("text")
+        .text(function(d) { return d; })
+        .attr("x", function(d, i) { return i * tamanhoGrid; })
         .attr("y", 0)
         .style("text-anchor", "middle")
-        .attr("transform", "translate(" + grid / 2 + ", -6)")
-        .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "nomeCursoLabel legenda axis eixoNomeCurso" : "nomeCursoLabel legenda axis"); });
+        .attr("transform", "translate(" + tamanhoGrid / 2 + ", -6)")
+        .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel legenda axis eixoNomeCurso" : "timeLabel legenda axis"); });
 
-  var colorScale = d3.scale.quantile()
-    .domain([0, itensLegenda-1, d3.max(dados, function(d){  return d.evasao;})])
-    .range(cores);
+    var colorScale = d3.scale.quantile()
+        .domain([-65000, 65000])
+        .range(cores);
 
-  var cards = svg.selectAll(".nomeCurso")
-    .data(dados, function(d) {return d.ano+':'+d.nomeCurso;});
+    var cards = svg.selectAll(".nomeCurso")
+        .data(data, function(d) {return d.ano+':'+d.nomeCurso;});
 
-  cards.append("title");
+    cards.append("title");
 
-  cards.enter().append("rect")
-    .attr("x", function(d) { return (d.nomeCurso - 1) * grid; })
-    .attr("y", function(d) { return (d.ano - 1) * grid; })
-    .attr("rx", 4)
-    .attr("ry", 4)
-    .attr("class", "nomeCurso borda")
-    .attr("largura", grid)
-    .attr("altura", grid)
-    .style("fill", cores[0]);  
+    cards.enter().append("rect")
+        .attr("x", function(d) { return (d.nomeCurso - 1) * tamanhoGrid; })
+        .attr("y", function(d) { return (d.ano - 1) * tamanhoGrid; })
+        .attr("rx", 4)
+        .attr("ry", 4)
+        .attr("class", "nomeCurso borda")
+        .attr("width", tamanhoGrid)
+        .attr("height", tamanhoGrid)
+        .style("fill", cores[0]);
 
-  cards.transition().duration(1000)
-    .style("fill", function(d) { return colorScale(d.evasao); });
+    cards.transition().duration(1000)
+        .style("fill", function(d) { return colorScale(d.evasao); });
 
-  cards.select("title").text(function(d) { return d.evasao; });
-  
-  cards.exit().remove();
+    cards.select("title").text(function(d) { return d.evasao; });
+          
+    cards.exit().remove();
 
-  var legend = svg.selectAll(".legend")
-    .data([0].concat(colorScale.quantiles()), function(d) { return d; });
+    var legend = svg.selectAll(".legend")
+        .data([-65000].concat(colorScale.quantiles()), function(d) { return d; });
 
-  legend.enter().append("g")
-    .attr("class", "legend");
+    legend.enter().append("g")
+        .attr("class", "legend");
 
-  legend.append("rect")
-    .attr("x", function(d, i) { return larguraLegenda * i; })
-    .attr("y", altura)
-    .attr("largura", larguraLegenda)
-    .attr("altura", grid / 2)
-    .style("fill", function(d, i) { return colors[i]; });
+    legend.append("rect")
+      .attr("x", function(d, i) { return tamanhoLegenda * i; })
+      .attr("y", altura)
+      .attr("width", tamanhoLegenda)
+      .attr("height", tamanhoGrid / 2)
+      .style("fill", function(d, i) { return cores[i]; });
 
-  legend.append("text")
-    .attr("class", "legenda")
-    .text(function(d) { return "≥ " + Math.round(d); })
-    .attr("x", function(d, i) { return larguraLegenda * i; })
-    .attr("y", altura + grid);
+    legend.append("text")
+      .attr("class", "legenda")
+      .text(function(d) { return Math.round(d); })
+      .attr("x", function(d, i) { return tamanhoLegenda * i; })
+      .attr("y", altura + tamanhoGrid);
 
-  legend.exit().remove();        
-
-}
+    legend.exit().remove();
 
 
-function Main(dados) {
-  var container = "#containerNorte";
-  CriaHeatMap(dados, container);
-  DesenhaHeatMap(container);
-}
+  });  
+};
+
+
+heatmapChart(basesDados[0], "#evasaoNorte");
+heatmapChart(basesDados[1], "#evasaoNordeste");
+heatmapChart(basesDados[2], "#evasaoCentroOeste");
+heatmapChart(basesDados[3], "#evasaoSudeste");
+heatmapChart(basesDados[4], "#evasaoSul");

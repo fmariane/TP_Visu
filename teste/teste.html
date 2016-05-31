@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <head>
+    <style>
+      rect.borda {
+        stroke: #E6E6E6;
+        stroke-largura:2px;   
+      }
+
+      text.legenda {
+        font-size: 7pt;
+        font-family: "Tahoma";
+        color: #696969;
+      }
+
+      text.eixoAno {
+        color: #696969;
+      }
+
+      text.eixoNomeCurso {
+        color: #696969;
+      }
+      #evasaoNorte {
+        position: relative;
+        float: left;
+      }
+      #evasaoNordeste {
+        position: relative;
+        float: left;
+      }
+      #evasaoCentroOeste {
+        position: relative;
+        float: left;
+      }
+      #evasaoSudeste {
+        position: relative;
+        float: left;
+      }
+      #evasaoSul {
+        position: relative;
+        float: left;
+      }
+
+    </style>
+    <script src="http://d3js.org/d3.v3.js"></script>
+  </head>
+  <body>
+    <div>
+      <div id="evasaoNorte"></div>
+      <div id="evasaoNordeste"></div>
+      <div id="evasaoCentroOeste"></div>
+      <div id="evasaoSudeste"></div>
+      <div id="evasaoSul"></div>
+    </div>
+    <script type="text/javascript">
+      var margem = { top: 50, right: 0, bottom: 100, left: 30 };
+      var largura = 960 - margem.left - margem.right;
+      var altura = 350 - margem.top - margem.bottom;
+      var tamanhoGrid = Math.floor(largura / 45);
+      var tamanhoLegenda = tamanhoGrid*1.24;
+      var elementosLegenda = 9;
+      var cores = ["#1717F7", "#3232F8", "#4F4FF9", "#7B7BFB", "#FFFFFF", "#FFCBCB", "#FF9999", "#FF6666","#FF2020"]; 
+      var anos = ["2008", "2009", "2010", "2011", "2012", "2013", "2014"];
+      var cursos = ["EF2", "EF3", "EF4", "EF5", "EF6", "EF7", "EF8", "EF9", "EM1", "EM2", "EM3"];
+      var basesDados = ["evasaoNorte.tsv", "evasaoNordeste.tsv", "evasaoCentroOeste.tsv", "evasaoSudeste.tsv", "evasaoSul.tsv"];
+
+
+      var heatmapChart = function(tsvFile, container) {
+        //////////////////////////////////////
+        //// PRÉ PROCESSAMENTO DOS DADOS ////
+        //////////////////////////////////// 
+        d3.tsv(tsvFile,
+        function(d) {
+          return {
+            ano: +d.ano,
+            nomeCurso: +d.nomeCurso,
+            evasao: +d.evasao
+          };
+        });
+
+
+        ////////////////////////////////////
+        //// CRIAÇÃO DAS VISUALIZAÇÕES ////
+        //////////////////////////////////
+        var svg = d3.select(container).append("svg")
+          .attr("width", 230 + margem.left + margem.right)
+          .attr("height", 150 + margem.top + margem.bottom)
+          .append("g")
+          .attr("transform", "translate(" + margem.left + "," + margem.top + ")");
+
+        
+        ////////////////////////////////////
+        //// DESENHO DAS VISUALIZAÇÕES ////
+        //////////////////////////////////
+        d3.tsv(tsvFile,
+        function(error, data) {
+          var anoLabels = svg.selectAll(".anoLabel")
+            .data(anos)
+            .enter().append("text")
+              .text(function (d) { return d; })
+              .attr("x", 0)
+              .attr("y", function (d, i) { return i * tamanhoGrid; })
+              .style("text-anchor", "end")
+              .attr("transform", "translate(-6," + tamanhoGrid / 1.5 + ")")
+              .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "anoLabel legenda axis eixoAno" : "anoLabel legenda axis"); });
+
+        var timeLabels = svg.selectAll(".timeLabel")
+            .data(cursos)
+            .enter().append("text")
+              .text(function(d) { return d; })
+              .attr("x", function(d, i) { return i * tamanhoGrid; })
+              .attr("y", 0)
+              .style("text-anchor", "middle")
+              .attr("transform", "translate(" + tamanhoGrid / 2 + ", -6)")
+              .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "timeLabel legenda axis eixoNomeCurso" : "timeLabel legenda axis"); });
+
+          var colorScale = d3.scale.quantile()
+              .domain([-65000, 65000])
+              .range(cores);
+
+          var cards = svg.selectAll(".nomeCurso")
+              .data(data, function(d) {return d.ano+':'+d.nomeCurso;});
+
+          cards.append("title");
+
+          cards.enter().append("rect")
+              .attr("x", function(d) { return (d.nomeCurso - 1) * tamanhoGrid; })
+              .attr("y", function(d) { return (d.ano - 1) * tamanhoGrid; })
+              .attr("rx", 4)
+              .attr("ry", 4)
+              .attr("class", "nomeCurso borda")
+              .attr("width", tamanhoGrid)
+              .attr("height", tamanhoGrid)
+              .style("fill", cores[0]);
+
+          cards.transition().duration(1000)
+              .style("fill", function(d) { return colorScale(d.evasao); });
+
+          cards.select("title").text(function(d) { return d.evasao; });
+          
+          cards.exit().remove();
+
+          var legend = svg.selectAll(".legend")
+              .data([-65000].concat(colorScale.quantiles()), function(d) { return d; });
+
+          legend.enter().append("g")
+              .attr("class", "legend");
+
+          legend.append("rect")
+            .attr("x", function(d, i) { return tamanhoLegenda * i; })
+            .attr("y", altura)
+            .attr("width", tamanhoLegenda)
+            .attr("height", tamanhoGrid / 2)
+            .style("fill", function(d, i) { return cores[i]; });
+
+          legend.append("text")
+            .attr("class", "legenda")
+            .text(function(d) { return Math.round(d); })
+            .attr("x", function(d, i) { return tamanhoLegenda * i; })
+            .attr("y", altura + tamanhoGrid);
+
+          legend.exit().remove();
+
+        });  
+      };
+
+      heatmapChart(basesDados[0], "#evasaoNorte");
+      heatmapChart(basesDados[1], "#evasaoNordeste");
+      heatmapChart(basesDados[2], "#evasaoCentroOeste");
+      heatmapChart(basesDados[3], "#evasaoSudeste");
+      heatmapChart(basesDados[4], "#evasaoSul");
+
+    </script>
+  </body>
+</html>

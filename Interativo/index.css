@@ -1,0 +1,87 @@
+body{
+	background-color: #F0F0F0;
+}
+
+h1 {
+	font-family: "Tahoma";
+    font-size: 35;
+    font-weight: 400;
+    color: #696969;
+    text-align: center;
+    margin: 2px;
+
+}
+h2{
+	font-family: "Tahoma";
+    font-size: 25;
+    font-weight: 400;
+    color: #808080;
+    text-align: center;
+    margin: 0px;
+}
+h3{
+    font-family: "Tahoma";
+    font-size: 15;
+    font-weight: 200;
+    color: #808080;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+footer {
+	font-family: "Tahoma";
+    font-size: 10;
+    font-weight: 200;
+    color: #999999;
+    text-align: right;
+    margin: 0px;
+}
+
+rect.borda {
+    stroke: #E6E6E6;
+    stroke-width:2px;   
+}
+
+div.tooltip {
+    position: absolute;    
+    text-align: center;    
+    width: 90px;          
+    height: 60px;        
+    padding: 2px;      
+    font: 10px Tahoma;    
+    background: rgba(0, 0, 0, 0.8);
+    border: 0px;    
+    border-radius: 2px;    
+    pointer-events: none;    
+    color: #FFFFFF;   
+}
+
+#evasao{
+    margin: 0px;
+}
+#evasaoNorte {
+    position: relative;
+    float: left;
+    margin: 0px;
+}
+#evasaoNordeste {
+    position: relative;
+    float: left;
+    margin: 0px;
+}
+#evasaoCentroOeste {
+    position: relative;
+    float: left;
+    margin: 0px;
+}
+#evasaoSudeste {
+    position: relative;
+    float: left;
+    margin: 0px;
+}
+#evasaoSul {
+    position: relative;
+    float: left;
+    margin: 0px;
+}

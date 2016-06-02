@@ -108,7 +108,7 @@ var firstHeatmapChart = function(tsvFile, container) {
         .style("text-anchor", "end")
         .attr("transform", "translate(-6," + tamanhoGrid / 1.5 + ")")
         .attr("font-family", "Tahoma")
-        .attr("font-size", "10px")
+        .attr("font-size", "12px")
         .attr("fill", "#696969")
 
   var anoLabels = svg.selectAll(".anoLabel")
@@ -120,7 +120,7 @@ var firstHeatmapChart = function(tsvFile, container) {
         .style("text-anchor", "middle")
         .attr("transform", "translate(" + tamanhoGrid / 2 + ", -6)")
         .attr("font-family", "Tahoma")
-        .attr("font-size", "10px")
+        .attr("font-size", "11px")
         .attr("fill", "#696969")
 
     var escalaCores = d3.scale.quantile()

@@ -4,7 +4,7 @@ body{
 
 h1 {
 	font-family: "Tahoma";
-    font-size: 40;
+    font-size: 35;
     font-weight: 400;
     color: #696969;
     text-align: center;
@@ -13,7 +13,7 @@ h1 {
 }
 h2{
 	font-family: "Tahoma";
-    font-size: 28;
+    font-size: 25;
     font-weight: 400;
     color: #808080;
     text-align: center;
@@ -21,8 +21,8 @@ h2{
 }
 h3{
     font-family: "Tahoma";
-    font-size: 18;
-    font-weight: 400;
+    font-size: 15;
+    font-weight: 200;
     color: #808080;
     text-align: center;
     margin-top: 10px;
@@ -31,10 +31,11 @@ h3{
 
 footer {
 	font-family: "Tahoma";
-    font-size: 12;
-    font-weight: 400;
+    font-size: 10;
+    font-weight: 200;
     color: #999999;
     text-align: right;
+    margin: 0px;
 }
 
 
@@ -42,36 +43,33 @@ rect.borda {
     stroke: #E6E6E6;
     stroke-width:2px;   
 }
-text.legenda {
-    font-size: 8pt;
-    font-family: "Tahoma";
-    color: #808080
-}
-text.eixoAno {
-    color: #808080;
-}
-text.eixoNomeCurso {
-    color: #808080;
-}
 
 
+#evasao{
+    margin: 0px;
+}
 #evasaoNorte {
     position: relative;
     float: left;
+    margin: 0px;
 }
 #evasaoNordeste {
     position: relative;
     float: left;
+    margin: 0px;
 }
 #evasaoCentroOeste {
     position: relative;
     float: left;
+    margin: 0px;
 }
 #evasaoSudeste {
     position: relative;
     float: left;
+    margin: 0px;
 }
 #evasaoSul {
     position: relative;
     float: left;
+    margin: 0px;
 }

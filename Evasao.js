@@ -11,7 +11,7 @@ var basesDados = ["data/evasaoNorte.tsv", "data/evasaoNordeste.tsv", "data/evasa
 
 
 var heatmapChart = function(tsvFile, container) {
-  margem = { top: 20, right: 0, bottom: 100, left: 10 };
+  margem = { top: 20, right: 0, bottom: 50, left: 0 };
   //////////////////////////////////////
   //// PRÉ PROCESSAMENTO DOS DADOS ////
   //////////////////////////////////// 
@@ -107,7 +107,9 @@ var firstHeatmapChart = function(tsvFile, container) {
         .attr("y", function (d, i) { return i * tamanhoGrid; })
         .style("text-anchor", "end")
         .attr("transform", "translate(-6," + tamanhoGrid / 1.5 + ")")
-        .attr("class", function (d, i) { return ((i >= 0 && i <= 4) ? "nomeCursoLabel legenda axis eixoNomeCurso" : "nomeCursoLabel legenda axis"); });
+        .attr("font-family", "Tahoma")
+        .attr("font-size", "10px")
+        .attr("fill", "#696969")
 
   var anoLabels = svg.selectAll(".anoLabel")
       .data(anos)
@@ -117,7 +119,9 @@ var firstHeatmapChart = function(tsvFile, container) {
         .attr("y", 0)
         .style("text-anchor", "middle")
         .attr("transform", "translate(" + tamanhoGrid / 2 + ", -6)")
-        .attr("class", function(d, i) { return ((i >= 7 && i <= 16) ? "anoLabel legenda axis eixoAno" : "anoLabel legenda axis"); });
+        .attr("font-family", "Tahoma")
+        .attr("font-size", "10px")
+        .attr("fill", "#696969")
 
     var escalaCores = d3.scale.quantile()
         .domain([-65000, 65000])
@@ -147,7 +151,41 @@ var firstHeatmapChart = function(tsvFile, container) {
   });  
 };
 
+var legendScale = function(container) {
+  var valores_referencia = ["-65000","-48750","-32500","-16250","0","16250","32500","48750","65000"];
+  var sub_w = 70; //largura dos blocos da legenda
+  var sub_h = 20; //altura
+  largura = 700;
+  altura = 30;
+        
+  var svg = d3.select(container)
+  .append("svg")
+  .attr("width", largura)
+  .attr("height", altura);
 
+  svg.selectAll("rect")
+  .data(valores_referencia)
+  .enter()
+  .append("rect")
+  .attr("x", function(d, i) { return i * sub_w;})
+  .attr("y", 0) 
+  .attr("width", sub_w)
+  .attr("height", function(d) { return sub_h;  })
+  .attr("fill", function(d,i) { return cores[i]; });
+
+  svg.selectAll("text")
+  .data(valores_referencia)
+  .enter()
+  .append("text")
+  .text(function(d) { return d; })
+  .attr("x", function(d, i) {if(i<4) {return i* sub_w + 20;} else if (i>4){ return i*sub_w + 22} else{ return i *sub_w + 31}}) 
+  .attr("y", function(d) { return 30;}) 
+  .attr("font-family", "Tahoma")
+  .attr("font-size", "10px")
+  .attr("fill", "#696969")
+      
+
+}
 
 
 firstHeatmapChart(basesDados[0], "#evasaoNorte");
@@ -155,3 +193,4 @@ heatmapChart(basesDados[1], "#evasaoNordeste");
 heatmapChart(basesDados[2], "#evasaoCentroOeste");
 heatmapChart(basesDados[3], "#evasaoSudeste");
 heatmapChart(basesDados[4], "#evasaoSul");
+legendScale ("#evasao");

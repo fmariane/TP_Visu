@@ -1,0 +1,122 @@
+body{
+	background-color: #F0F0F0;
+}
+
+h1 {
+	font-family: "Tahoma";
+    font-size: 35;
+    font-weight: 400;
+    color: #696969;
+    text-align: center;
+    margin: 2px;
+
+}
+h2{
+	font-family: "Tahoma";
+    font-size: 25;
+    font-weight: 400;
+    color: #808080;
+    text-align: center;
+    margin: 0px;
+}
+h3{
+    font-family: "Tahoma";
+    font-size: 15;
+    font-weight: 200;
+    color: #808080;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+footer {
+	font-family: "Tahoma";
+  font-size: 10;
+  font-weight: 200;
+  color: #999999;
+  text-align: right;
+  margin: 0px;
+}
+
+#buttons { 
+  position:absolute; 
+  top:590px; 
+  left:120px; 
+}
+
+.state_contour {
+  fill: none;
+  stroke: none;
+  stroke-linejoin: round;
+  fill-opacity: 0.2;
+}
+
+.subunitNorte{
+    fill: #000000;
+}
+.subunitNordeste{
+    fill: #000000;
+}
+.subunitCentroOeste{
+    fill: #000000;
+}
+.subunitSudeste{
+    fill: #000000;
+}
+.subunitSul{
+    fill: #000000;
+}
+
+
+.hidden { 
+  display: none; 
+}
+div.tooltip {
+    position: absolute;    
+    text-align: center;    
+    width: 130px;          
+    height: 60px;        
+    padding: 2px;      
+    font: 10px Tahoma;    
+    background: rgba(0, 0, 0, 0.8);
+    border: 0px;    
+    border-radius: 2px;    
+    pointer-events: none;    
+    color: #FFFFFF;   
+}
+
+#squareOne {    
+position:absolute;
+top:50px;
+left:10px;
+width:550px;
+height: 550px; 
+}
+#squareTwo {    
+position:absolute;
+top:50px;
+left:560px;
+width:500px;
+height: 200px;
+}
+#squareThree {    
+position:absolute;
+top:260px;
+left:560px;
+width:450px;
+height: 225px;
+}
+#rankChart{
+position:absolute;
+top:10px;
+left:170px;
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px; 
+  color: white;
+}

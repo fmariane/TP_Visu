@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trabalho de Visualização de Dados - 2016/1</title>    
+    <meta charset="utf-8"/>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3-queue.v2.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+        
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+  </head>
+  <body>
+
+    <h1>Trabalho de Visualização de Dados - 2016/1</h1>
+    <h2>Mapa do Brasil</h2>
+       
+    <div id="squareOne"></div>
+	<div id="squareTwo"></div>
+	<div id="squareThree"></div>
+    
+    <footer>Carolina Coimbra Vieira</footer>
+    <footer>Celso Bernardes Silva</footer>
+    <footer>Mariane Fernandes de Oliveira</footer>
+    <footer>Patrícia Gomes da Silva</footer>
+    <footer>Pedro Campolina Diniz Rodrigues</footer>
+    
+    <script type="text/javascript" src="bar_chart.js"></script>
+    <script type="text/javascript" src="Mapa.js"></script>
+
+	<div id ="buttons">
+        <input name="2009Button" type="button" value="2009" onclick="setYear(0)"/>
+        <input name="2010Button" type="button" value="2010" onclick="setYear(1)"/>
+        <input name="2011Button" type="button" value="2011" onclick="setYear(2)"/>
+        <input name="2012Button" type="button" value="2012" onclick="setYear(3)"/>
+        <input name="2013Button" type="button" value="2013" onclick="setYear(4)"/>
+    </div>
+  </body>
+</html>

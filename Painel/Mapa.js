@@ -214,8 +214,8 @@ var transferSudeste = [673591156.34, 2438929485.17, 926288675.64, 633480237.35, 
 var transferSul = [785852305.81, 1005582872.08, 493142364.54, 271151625.19, 798338778.34];
 var transferSum = [4775646945.35, 7077936882.34, 3364347233.56, 1096442094.75, 6019690453.97];
 
-var transferNorteSubtitle = ["370.1M", "390.9M", "146.3M", "7.3M", "258.3M"];
-var transferNordesteSubtitle = ["1.36B", "2.54B", "981.3M", "105.3M", "1.16B"];
-var transferCentroOesteSubtitle = ["1.58B", "693.0M", "817.2M", "79.1M", "902.4M"];
-var transferSudesteSubtitle = ["673.5M", "2.43B", "926.2M", "633.4M", "2.89B"];
-var transferSulSubtitle = ["785.8M", "1.0B", "493.1M", "271.1M", "798.3M"];
+var transferNorteSubtitle = ["370.16M", "390.97M", "146.38M", "7.34M", "258.30M"];
+var transferNordesteSubtitle = ["1.36B", "2.55B", "981.31M", "105.34M", "1.16B"];
+var transferCentroOesteSubtitle = ["1.58B", "693.09M", "817.23M", "79.13M", "902.41M"];
+var transferSudesteSubtitle = ["673.59M", "2.44B", "926.29M", "633.48M", "2.90B"];
+var transferSulSubtitle = ["785.85M", "1.01B", "493.14M", "271.15M", "798.34M"];

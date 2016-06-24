@@ -2,7 +2,7 @@
      height = 280;
 
   var expScale = d3.scale.linear().range([5, 100]);
-  var fill = d3.scale.category20(); //escala de cor
+  var color = d3.scale.category20(); //escala de cor
   d3.tsv("word_cloud_data/exp2014sec_normalized.tsv", function(data) {
     var exp = data
         .filter(function(d) {return +d.Valor_Exportacao;})
@@ -36,7 +36,7 @@
       .enter().append("text")
         .style("font-size", function(d) { return d.size + "px"; })
         .style("font-family", "Impact")
-        .style("fill", function(d, i) { return fill(i); })
+        .style("fill", function(d, i) { return color(i); })
         .attr("text-anchor", "middle")
         .attr("transform", function(d) {
           return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";

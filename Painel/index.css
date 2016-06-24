@@ -73,10 +73,24 @@ footer {
   display: none; 
 }
 div.tooltip {
-    position: absolute;    
+  position: absolute;    
   text-align: center;    
   width: 130px;          
   height: 45px;        
+  padding: 2px;      
+  font: 10px Tahoma;    
+  background: rgba(0, 0, 0, 0.8);
+  border: 0px;    
+  border-radius: 2px;    
+  pointer-events: none;    
+  color: #FFFFFF;    
+}
+
+div.tooltipDonut {
+  position: absolute;    
+  text-align: center;    
+  width: 150px;          
+  height: 60px;        
   padding: 2px;      
   font: 10px Tahoma;    
   background: rgba(0, 0, 0, 0.8);
@@ -121,9 +135,9 @@ left:10px;
 width:380px;
 height: 280px;
 }
+
 .chart div {
   font: 10px sans-serif;
-  background-color: steelblue;
   text-align: right;
   padding: 3px;
   margin: 1px; 
@@ -152,41 +166,42 @@ svg {
 .value {
   font-size: 9px;
   font-weight: 300;
-  fill: black;
+  fill: #696969;
 }
 
 .label {
   font-size: 12px;
-  fill: #333;
+  fill: #696969;
 }
 
 .axis {
   path {
     fill: none;
-    //stroke: #333;
   }
   .tick line {
-    stroke-width: 1;
-    stroke: red;
-	 fill: black;
+  stroke-width: 1;
+  stroke: red;
   };
  
   font-size: 8px;
+  fill: #696969;
 }
 
 .slice {
-   font-size: 12pt;
-   font-family: Verdana;
-   fill: black; //svg specific - instead of color
-   font-weight: bold;	
-  		} 
+  font-size: 12pt;
+  font-family: Tahoma;
+  fill: #696969; 	
+} 
+
 .title {
-	 font-family: Verdana;
-    font-size: 12px;	
-		
+	font-family: Tahoma;
+  font-size: 10px;	
+  font-weight: bold;  
+  fill: #696969; 	
 }
+
 .legend {
-	font-size: 8pt;
-   font-family: Verdana;
-	
+	font-size: 7pt;
+  font-family: Tahoma;
+  fill: #696969; 
 }

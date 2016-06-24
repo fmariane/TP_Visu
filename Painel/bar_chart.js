@@ -1,120 +1,302 @@
-var svgWidth = 100;
-  var svgHeight = 100;
-  var barPadding = 1;
-
-  var sqr1 = d3.select("#squareThree")
-  	.append("svg")     
-    .attr("width", svgWidth)
-    .attr("height", svgHeight);
-
-    sqr1.append("rect")
-
-    .attr("x", 0)
-    .attr("y", 0)
-    .attr("width", 30)
-    .attr("height", 100)
-    .attr("fill", "red")
-    .on("click", reload_bars1);
-
-	sqr1.append("rect")
-	.attr("x", 40)
-	.attr("y", 0)
-	.attr("width", 30)
-	.attr("height", 100)
-	.attr("fill", "green")
-	.on("click", reload_bars2);
+	var bases_de_dados2009 = ["bar_data/cur_sup_reg_1_2009.tsv","bar_data/cur_sup_reg_2_2009.tsv","bar_data/cur_sup_reg_3_2009.tsv","bar_data/cur_sup_reg_4_2009.tsv","bar_data/cur_sup_reg_5_2009.tsv"];
+	var bases_de_dados2010 = ["bar_data/cur_sup_reg_1_2010.tsv","bar_data/cur_sup_reg_2_2010.tsv","bar_data/cur_sup_reg_3_2010.tsv","bar_data/cur_sup_reg_4_2010.tsv","bar_data/cur_sup_reg_5_2010.tsv"];
+	var callbackError;
+    var callbackData;
 	
 	
-	//fim dos controladores
-	//grafico de barras
-	bar_chart();
+	bar_chart(bases_de_dados2009[0]);
 
-	function bar_chart()
+	function bar_chart(bases_de_dados2009)
 	{
-  		var dataset = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  		var svgWidth = 500;
-    	var svgHeight = 100;
-    	var barPadding = 1;
-
-
-  		var sqr2 = d3.select("#squareTwo")
-		  	.append("svg")     
-		    .attr("width", svgWidth)
-		    .attr("height", svgHeight);
-
-		sqr2.selectAll("rect")
-		    .data(dataset)
-		    .enter()
-		    .append("rect")
-		    .attr("x", function(d, i) { return i * (svgWidth / dataset.length);})
-		    .attr("y", function(d) { return svgHeight - d * 4;})
-		    .attr("width", svgWidth / dataset.length - barPadding)
-		    .attr("height", function(d) {
-			    return d * 4;
-			})
-			.attr("fill", function(d) {
-			    return "rgb(0, 0, " + (d * 50) + ")";
-			});
-
-	}
-
-	bar_chart_horizontal();
 		
-	function bar_chart_horizontal(){
-	
+		d3.tsv("bar_data/cur_sup_reg_1_2009.tsv",
+        function(error, data) {
+            callbackError = error;
+            callbackData = data;		
+			
+		var chart = document.getElementById("squareTwo"),
+			axisMargin = 20,
+			margin = 20,
+			valueMargin = 4,
+			width = chart.offsetWidth,
+			height = chart.offsetHeight,
+			barHeight = (height-axisMargin-margin*2)* 0.4/data.length,
+			barPadding = (height-axisMargin-margin*2)*0.6/data.length,
+			data, bar, svg, scale, xAxis, labelWidth = 0;
+		
+		
+		var max = data[0].total;
 		
 	
-	}
+		svg = d3.select(chart)
+		  .append("svg")
+		  .attr("width", width)
+		  .attr("height", height);
+
+
+		bar = svg.selectAll("g")
+		  .data(data)
+		  .enter()
+		  
+		  .append("g");
+
+		bar.attr("class", "bar")
+		  .attr("cx",0)
+		  .attr("transform", function(data, i) { 
+			 return "translate(" + margin + "," + (i * (barHeight + barPadding) + barPadding) + ")";
+		  });
+
+		bar.append("text")
+		  .attr("class", "label")
+		  .attr("y", barHeight / 2)
+		  .attr("dy", ".35em") //vertical align middle
+		  .text(function(data){
+			return data.courses;
+		  }).each(function() {
+			labelWidth = Math.ceil(Math.max(labelWidth, this.getBBox().width));
+		  });
+
+		scale = d3.scale.linear()
+		  .domain([0, max])
+		  .range([0, width - margin*2 - labelWidth - 15]);
+		
+
+		bar.append("rect")
+		  .attr("transform", "translate("+labelWidth+", 0)")
+		  .attr("height", barHeight)
+		  .attr("width", function(data){
+			return scale(data.total);
+		  });
+
+		bar.append("text")
+		  .attr("class", "value")
+		  .attr("y", barHeight / 2)
+		  .attr("dx", 26 + labelWidth) //margin right
+		  .attr("dy", ".35em") //vertical align middle
+		  .attr("text-anchor", "end")
+		  .text(function(data){
+			return data.total;
+		  })
+		 .attr("x", function(data){
+			var width = this.getBBox().width;
+			return Math.max(width + valueMargin, scale(data.total));
+		  });
 	
+		xAxis = d3.svg.axis()
+		  .scale(scale)
+		  .tickSize(-height + 2*margin + axisMargin + 259)
+		  .orient("bottom");
+		  
+		svg.insert("g",":first-child")
+		 .attr("class", "axis")
+		 .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
+		 .call(xAxis);
+		});
+	}
+
+    function reload_bars(idYear, reg) {
+		var database = [];
+		if(idYear == 0)
+		{
+			//norte
+			database = bases_de_dados2009[reg];
+		}
+		else if(idYear == 1)
+		{
+			
+			database = bases_de_dados2010[reg];
+		}
+	
+	
+	
+	
+		d3.select("#squareTwo").remove();
+		
+		var div = document.createElement("div");
+		div.id = "squareTwo";
+
+		document.body.appendChild(div);
+	
+		d3.tsv(database,
+        function(error, data) {
+            callbackError = error;
+            callbackData = data;		
+			
+		var chart = document.getElementById("squareTwo"),
+			axisMargin = 20,
+			margin = 20,
+			valueMargin = 4,
+			width = chart.offsetWidth,
+			height = chart.offsetHeight,
+			barHeight = (height-axisMargin-margin*2)* 0.4/data.length,
+			barPadding = (height-axisMargin-margin*2)*0.6/data.length,
+			data, bar, svg, scale, xAxis, labelWidth = 0;
+		
+		
+		var max = data[0].total;
+		
+	
+		svg = d3.select(chart)
+		  .append("svg")
+		  .attr("width", width)
+		  .attr("height", height);
 
 
-    function reload_bars1() {
+		bar = svg.selectAll("g")
+		  .data(data)
+		  .enter()
+		  
+		  .append("g");
 
+		bar.attr("class", "bar")
+		  .attr("cx",0)
+		  .attr("transform", function(data, i) { 
+			 return "translate(" + margin + "," + (i * (barHeight + barPadding) + barPadding) + ")";
+		  });
 
-    	var dataset2 = [10,9,8,7,6,5,4,3,2,1];
-    	var svgWidth = 500;
-    	var svgHeight = 100;
-    	var barPadding = 1;
+		bar.append("text")
+		  .attr("class", "label")
+		  .attr("y", barHeight / 2)
+		  .attr("dy", ".35em") //vertical align middle
+		  .text(function(data){
+			return data.courses;
+		  }).each(function() {
+			labelWidth = Math.ceil(Math.max(labelWidth, this.getBBox().width));
+		  });
 
-    	var aux = d3.select("#squareTwo")
-    		.datum(dataset2);
+		scale = d3.scale.linear()
+		  .domain([0, max])
+		  .range([0, width - margin*2 - labelWidth - 15]);
+		
 
-    	aux.selectAll("rect")
-	      .data(dataset2)
-	      .transition()
-			.duration(750)
-		  .attr("x", function(d, i) { return i * (svgWidth / dataset2.length);})
-		    .attr("y", function(d) { return svgHeight - d * 4;})
-		    .attr("width", svgWidth / dataset2.length - barPadding)
-		    .attr("height", function(d) {
-			    return d * 4;
-			})
-			.attr("fill", function(d) {
-			    return "rgb(0, 0, " + (d * 50) + ")";
-			});
+		bar.append("rect")
+		  .attr("transform", "translate("+labelWidth+", 0)")
+		  .attr("height", barHeight)
+		  .attr("width", function(data){
+			return scale(data.total);
+		  });
+
+		bar.append("text")
+		  .attr("class", "value")
+		  .attr("y", barHeight / 2)
+		  .attr("dx", 32 + labelWidth) //margin right
+		  .attr("dy", ".35em") //vertical align middle
+		  .attr("text-anchor", "end")
+		  .text(function(data){
+			return data.total;
+		  })
+		 .attr("x", function(data){
+			var width = this.getBBox().width;
+			return Math.max(width + valueMargin, scale(data.total));
+		  });
+	
+		xAxis = d3.svg.axis()
+		  .scale(scale)
+		  .tickSize(-height + 2*margin + axisMargin + 259)
+		  .ticks(5)
+
+		  .orient("bottom");
+		  
+		svg.insert("g",":first-child")
+		 .attr("class", "axis")
+		 .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
+		 .call(xAxis);
+		});
+		
     }
-    function reload_bars2() {
+	
+    function reload_bars2(bases_de_dados2) {
+
+	
+		d3.select("#squareTwo").remove();
+		
+		var div = document.createElement("div");
+		div.id = "squareTwo";
+
+		document.body.appendChild(div);
+	
+		d3.tsv("cur_sup_reg_1_2009.tsv",
+        function(error, data) {
+            callbackError = error;
+            callbackData = data;		
+			
+		var chart = document.getElementById("squareTwo"),
+			axisMargin = 20,
+			margin = 20,
+			valueMargin = 4,
+			width = chart.offsetWidth,
+			height = chart.offsetHeight,
+			barHeight = (height-axisMargin-margin*2)* 0.4/data.length,
+			barPadding = (height-axisMargin-margin*2)*0.6/data.length,
+			data, bar, svg, scale, xAxis, labelWidth = 0;
+		
+		
+		var max = data[0].total;
+		
+	
+		svg = d3.select(chart)
+		  .append("svg")
+		  .attr("width", width)
+		  .attr("height", height);
 
 
-    	var dataset2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    	var svgWidth = 500;
-    	var svgHeight = 100;
-    	var barPadding = 1;
+		bar = svg.selectAll("g")
+		  .data(data)
+		  .enter()
+		  
+		  .append("g");
 
-    	var aux = d3.select("#squareTwo")
-    		.datum(dataset2);
+		bar.attr("class", "bar")
+		  .attr("cx",0)
+		  .attr("transform", function(data, i) { 
+			 return "translate(" + margin + "," + (i * (barHeight + barPadding) + barPadding) + ")";
+		  });
 
-    	aux.selectAll("rect")
-	      .data(dataset2)
-	      .transition()
-			.duration(750)
-		  .attr("x", function(d, i) { return i * (svgWidth / dataset2.length);})
-		    .attr("y", function(d) { return svgHeight - d * 4;})
-		    .attr("width", svgWidth / dataset2.length - barPadding)
-		    .attr("height", function(d) {
-			    return d * 4;
-			})
-			.attr("fill", function(d) {
-			    return "rgb(0, 0, " + (d * 50) + ")";
-			});
+		bar.append("text")
+		  .attr("class", "label")
+		  .attr("y", barHeight / 2)
+		  .attr("dy", ".35em") //vertical align middle
+		  .text(function(data){
+			return data.courses;
+		  }).each(function() {
+			labelWidth = Math.ceil(Math.max(labelWidth, this.getBBox().width));
+		  });
+
+		scale = d3.scale.linear()
+		  .domain([0, max])
+		  .range([0, width - margin*2 - labelWidth - 15]);
+		
+
+		bar.append("rect")
+		  .attr("transform", "translate("+labelWidth+", 0)")
+		  .attr("height", barHeight)
+		  .attr("width", function(data){
+			return scale(data.total);
+		  });
+
+		bar.append("text")
+		  .attr("class", "value")
+		  .attr("y", barHeight / 2)
+		  .attr("dx", 26 + labelWidth) //margin right
+		  .attr("dy", ".35em") //vertical align middle
+		  .attr("text-anchor", "end")
+		  .text(function(data){
+			return data.total;
+		  })
+		 .attr("x", function(data){
+			var width = this.getBBox().width;
+			return Math.max(width + valueMargin, scale(data.total));
+		  });
+	
+		xAxis = d3.svg.axis()
+		  .scale(scale)
+		  .tickSize(-height + 2*margin + axisMargin + 259)
+		  .orient("bottom");
+		  
+		svg.insert("g",":first-child")
+		 .attr("class", "axis")
+		 .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
+		 .call(xAxis);
+		});
+			
     }

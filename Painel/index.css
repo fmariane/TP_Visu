@@ -1,7 +1,8 @@
-body{
-	background-color: #F0F0F0;
+body {
+  font-family: "Exo 2", sans-serif;
+  background-color: #F0F0F0;
+  color: #333;
 }
-
 h1 {
 	font-family: "Tahoma";
     font-size: 35;
@@ -38,10 +39,10 @@ footer {
   margin: 0px;
 }
 
-#buttons { 
-  position:absolute; 
-  top:590px; 
-  left:120px; 
+#buttons{
+	position:absolute;
+	top:410px;
+	left:60px; 
 }
 
 .state_contour {
@@ -73,45 +74,53 @@ footer {
 }
 div.tooltip {
     position: absolute;    
-    text-align: center;    
-    width: 130px;          
-    height: 60px;        
-    padding: 2px;      
-    font: 10px Tahoma;    
-    background: rgba(0, 0, 0, 0.8);
-    border: 0px;    
-    border-radius: 2px;    
-    pointer-events: none;    
-    color: #FFFFFF;   
+  text-align: center;    
+  width: 130px;          
+  height: 45px;        
+  padding: 2px;      
+  font: 10px Tahoma;    
+  background: rgba(0, 0, 0, 0.8);
+  border: 0px;    
+  border-radius: 2px;    
+  pointer-events: none;    
+  color: #FFFFFF;    
 }
 
 #squareOne {    
 position:absolute;
-top:50px;
+top:0px;
 left:10px;
-width:550px;
+width:400px;
 height: 550px; 
 }
 #squareTwo {    
 position:absolute;
-top:50px;
-left:560px;
-width:500px;
-height: 200px;
+top:100px;
+left:370px;
+width:400px;
+height: 320px;
 }
 #squareThree {    
 position:absolute;
-top:260px;
-left:560px;
-width:450px;
-height: 225px;
+top:440px;
+left:410px;
+width:270px;
+height: 270px;
 }
-#rankChart{
+#squareFour {    
 position:absolute;
-top:10px;
-left:170px;
+top:460px;
+left:690px;
+width:300px;
+height: 300px;
 }
-
+#squareFive {    
+position:absolute;
+top:470px;
+left:10px;
+width:380px;
+height: 280px;
+}
 .chart div {
   font: 10px sans-serif;
   background-color: steelblue;
@@ -119,4 +128,65 @@ left:170px;
   padding: 3px;
   margin: 1px; 
   color: white;
+}
+
+.widget {
+  display: inline-block;
+  border: 1px solid #AAA;
+  background: white;
+}
+
+#chart {
+  height: 400px;
+  width: 500px;
+}
+
+svg {
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.value {
+  font-size: 9px;
+  font-weight: 300;
+  fill: black;
+}
+
+.label {
+  font-size: 12px;
+  fill: #333;
+}
+
+.axis {
+  path {
+    fill: none;
+    //stroke: #333;
+  }
+  .tick line {
+    stroke-width: 1;
+    stroke: red;
+	 fill: black;
+  };
+ 
+  font-size: 8px;
+}
+
+.slice {
+   font-size: 12pt;
+   font-family: Verdana;
+   fill: black; //svg specific - instead of color
+   font-weight: bold;	
+  		} 
+.title {
+	 font-family: Verdana;
+    font-size: 12px;	
+		
+}
+.legend {
+	font-size: 8pt;
+   font-family: Verdana;
+	
 }

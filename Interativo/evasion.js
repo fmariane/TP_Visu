@@ -7,7 +7,7 @@ var elementsSubtitle = 9;
 var colors = ["#6060F7", "#8080F8", "#AAAAF9", "#CCCCFA", "#EEEEFB", "#FFEEEE", "#FFCCCC", "#FFAAAA", "#FF8080","#FF6060"];
 var years = ["2008", "2009", "2010", "2011", "2012", "2013", "2014"];
 var schoolLevel = ["Middle school 2", "Middle school 3", "Middle school 4", "Middle school 5", "Middle school 6", "Middle school 7", "Middle school 8", "Middle school 9", "High school 1", "High school 2", "High school 3"];
-var dataBase = ["data/evasaoNorte.tsv", "data/evasaoNordeste.tsv", "data/evasaoCentroOeste.tsv", "data/evasaoSudeste.tsv", "data/evasaoSul.tsv"];
+var dataBase = ["data/evasionNorth.tsv", "data/evasionNortheast.tsv", "data/evasionMidwest.tsv", "data/evasionSoutheast.tsv", "data/evasionSouth.tsv"];
 var cor_ext =["#FF4040","#4040F6"];
  
 var heatmapChart = function(tsvFile, container) {
@@ -21,9 +21,9 @@ var heatmapChart = function(tsvFile, container) {
   d3.tsv(tsvFile,
   function(d) {
      return {
-      ano: +d.ano,
-      nomeCurso: +d.nomeCurso,
-      evasao: +d.evasao
+      year: +d.year,
+      schoolLevel: +d.schoolLevel,
+      evasion: +d.evasion
     };
   });
  
@@ -58,27 +58,27 @@ var heatmapChart = function(tsvFile, container) {
         .domain([-100000, 100000])
         .range(colors);
  
-    var cards = svg.selectAll(".ano")
-        .data(data, function(d) {return d.nomeCurso+':'+d.ano;});
+    var cards = svg.selectAll(".year")
+        .data(data, function(d) {return d.schoolLevel+':'+d.year;});
  
     cards.append("title");
  
     cards.enter().append("rect")
-        .attr("x", function(d) { return (d.ano - 1) * sizeGrid; })
-        .attr("y", function(d) { return (d.nomeCurso - 1) * sizeGrid; })
+        .attr("x", function(d) { return (d.year - 1) * sizeGrid; })
+        .attr("y", function(d) { return (d.schoolLevel - 1) * sizeGrid; })
         .attr("rx", 4)
         .attr("ry", 4)
-        .attr("class", "nomeCurso contour")
+        .attr("class", "schoolLevel contour")
         .attr("width", sizeGrid)
         .attr("height", sizeGrid)
-        .style("fill", function(d) {if(d.evasao > 100000){return cor_ext[0];} else { return colors[0];}})
+        .style("fill", function(d) {if(d.evasion > 100000){return cor_ext[0];} else { return colors[0];}})
         .on("mouseover", function(d,i) {    
            div.transition()    
                .duration(200)    
                .style("opacity", .9);    
-           div .html("<strong>Year: "+years[d.ano-1]+"<br/>"+"</strong>"+"<strong>School Level: "+schoolLevel[d.nomeCurso-1]+"<br/>"+"</strong>"+"<strong>School Evasion: "+d.evasao+"<br/>"+"</strong>")  
-               .style("left", ((d.ano) * sizeGrid)-40 + "px" )  
-               .style("top", ((d.nomeCurso - 1) * sizeGrid)-sizeGrid + 10 + "px" ) ;  
+           div .html("<strong>Year: "+years[d.year-1]+"<br/>"+"</strong>"+"<strong>School Level: "+schoolLevel[d.schoolLevel-1]+"<br/>"+"</strong>"+"<strong>School Evasion: "+d.evasion+"<br/>"+"</strong>")  
+               .style("left", ((d.year) * sizeGrid)-40 + "px" )  
+               .style("top", ((d.schoolLevel - 1) * sizeGrid)-sizeGrid + 10 + "px" ) ;  
            })          
        .on("mouseout", function(d) {  
            div.transition()    
@@ -87,9 +87,9 @@ var heatmapChart = function(tsvFile, container) {
        });
  
     cards.transition().duration(1000)
-        .style("fill", function(d) {if(d.evasao > 100000){return cor_ext[0];}else if(d.evasao<-100000){ return cor_ext[1];} else { return escalacolors(d.evasao);}});
+        .style("fill", function(d) {if(d.evasion > 100000){return cor_ext[0];}else if(d.evasion<-100000){ return cor_ext[1];} else { return escalacolors(d.evasion);}});
  
-    cards.select("title").text(function(d) { return d.evasao; });
+    cards.select("title").text(function(d) { return d.evasion; });
          
     cards.exit().remove();
  
@@ -108,9 +108,9 @@ var firstHeatmapChart = function(tsvFile, container) {
   d3.tsv(tsvFile,
   function(d) {
      return {
-      ano: +d.ano,
-      nomeCurso: +d.nomeCurso,
-      evasao: +d.evasao
+      year: +d.year,
+      schoolLevel: +d.schoolLevel,
+      evasion: +d.evasion
     };
   });
  
@@ -156,27 +156,27 @@ var firstHeatmapChart = function(tsvFile, container) {
         .domain([-100000, 100000])
         .range(colors);
  
-    var cards = svg.selectAll(".ano")
-        .data(data, function(d) {return d.nomeCurso+':'+d.ano;});
+    var cards = svg.selectAll(".year")
+        .data(data, function(d) {return d.schoolLevel+':'+d.year;});
  
     cards.append("title");
  
     cards.enter().append("rect")
-        .attr("x", function(d) { return (d.ano - 1) * sizeGrid; })
-        .attr("y", function(d) { return (d.nomeCurso - 1) * sizeGrid; })
+        .attr("x", function(d) { return (d.year - 1) * sizeGrid; })
+        .attr("y", function(d) { return (d.schoolLevel - 1) * sizeGrid; })
         .attr("rx", 4)
         .attr("ry", 4)
-        .attr("class", "nomeCurso contour")
+        .attr("class", "schoolLevel contour")
         .attr("width", sizeGrid)
         .attr("height", sizeGrid)
-        .style("fill", function(d) {if(d.evasao > 100000){return cor_ext[0];} else { return colors[0];}})
+        .style("fill", function(d) {if(d.evasion > 100000){return cor_ext[0];} else { return colors[0];}})
         .on("mouseover", function(d,i) {    
            div.transition()    
                .duration(200)    
                .style("opacity", .9);    
-           div .html("<strong>Year: "+years[d.ano-1]+"<br/>"+"</strong>"+"<strong>School Level: "+schoolLevel[d.nomeCurso-1]+"<br/>"+"</strong>"+"<strong>School Evasion: "+d.evasao+"<br/>"+"</strong>")  
-               .style("left", ((d.ano) * sizeGrid)+ 90  + "px")  
-               .style("top", ((d.nomeCurso - 1) * sizeGrid)-sizeGrid+10 + "px");  
+           div .html("<strong>Year: "+years[d.year-1]+"<br/>"+"</strong>"+"<strong>School Level: "+schoolLevel[d.schoolLevel-1]+"<br/>"+"</strong>"+"<strong>School Evasion: "+d.evasion+"<br/>"+"</strong>")  
+               .style("left", ((d.year) * sizeGrid)+ 90  + "px")  
+               .style("top", ((d.schoolLevel - 1) * sizeGrid)-sizeGrid+10 + "px");  
            })          
        .on("mouseout", function(d) {  
            div.transition()    
@@ -185,9 +185,9 @@ var firstHeatmapChart = function(tsvFile, container) {
        });
  
     cards.transition().duration(1000)
-        .style("fill", function(d) {if(d.evasao > 100000){return cor_ext[0];} else { return escalacolors(d.evasao);}});
+        .style("fill", function(d) {if(d.evasion > 100000){return cor_ext[0];} else { return escalacolors(d.evasion);}});
  
-    cards.select("title").text(function(d) { return d.evasao; });
+    cards.select("title").text(function(d) { return d.evasion; });
          
     cards.exit().remove();
   });  
@@ -237,9 +237,9 @@ var legendScale = function(container) {
 }
  
  
-firstHeatmapChart(dataBase[0], "#evasaoNorte");
-heatmapChart(dataBase[1], "#evasaoNordeste");
-heatmapChart(dataBase[2], "#evasaoCentroOeste");
-heatmapChart(dataBase[3], "#evasaoSudeste");
-heatmapChart(dataBase[4], "#evasaoSul");
-legendScale ("#evasao");
+firstHeatmapChart(dataBase[0], "#evasionNorth");
+heatmapChart(dataBase[1], "#evasionNortheast");
+heatmapChart(dataBase[2], "#evasionMidwest");
+heatmapChart(dataBase[3], "#evasionSoutheast");
+heatmapChart(dataBase[4], "#evasionSouth");
+legendScale ("#evasion");

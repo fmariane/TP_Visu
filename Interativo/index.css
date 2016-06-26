@@ -2,15 +2,6 @@ body{
 	background-color: #F0F0F0;
 }
 
-h1 {
-	font-family: "Tahoma";
-    font-size: 35;
-    font-weight: 400;
-    color: #696969;
-    text-align: center;
-    margin: 2px;
-
-}
 h2{
 	font-family: "Tahoma";
     font-size: 25;
@@ -57,31 +48,34 @@ div.tooltip {
     color: #FFFFFF;   
 }
 
-#evasao{
+#evasion{
     margin: 0px;
 }
-#evasaoNorte {
+#evasionNorth {
     position: relative;
     float: left;
     margin: 0px;
 }
-#evasaoNordeste {
+#evasionNortheast {
     position: relative;
     float: left;
     margin: 0px;
 }
-#evasaoCentroOeste {
+#evasionMidwest {
     position: relative;
     float: left;
     margin: 0px;
 }
-#evasaoSudeste {
+#evasionSoutheast {
     position: relative;
     float: left;
     margin: 0px;
 }
-#evasaoSul {
+#evasionSouth {
     position: relative;
     float: left;
     margin: 0px;
 }
+
+
+ 

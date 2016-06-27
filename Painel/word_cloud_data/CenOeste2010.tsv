@@ -1,23 +1,22 @@
-Year	ID BRA	ID HS	Exports	RegName	ExpSection
-2010	3	2	2444793474600	Centro-Oeste	Vegetable Prod
-2010	3	4	2313663643000	Centro-Oeste	Food Kinds
+Year	ID_BRA	ID_HS	Exports	RegName	ExpSection
 2010	3	1	1686604544000	Centro-Oeste	Animal Prod
+2010	3	2	2444793474600	Centro-Oeste	Vegetable Prod
+2010	3	3	333209579000	Centro-Oeste	Veg.&Animal derivatives
+2010	3	4	2313663643000	Centro-Oeste	Food Kinds
 2010	3	5	908836438000	Centro-Oeste	Mineral Prod
+2010	3	6	66165670000	Centro-Oeste	Chemicals
+2010	3	7	7808067000	Centro-Oeste	Plastics and Rubbers
+2010	3	8	152303891000	Centro-Oeste	Animal
+2010	3	9	110624148000	Centro-Oeste	Wood Prod
 2010	3	10	532100994000	Centro-Oeste	Paper Prod
 2010	3	11	386934309000	Centro-Oeste	Textiles
-2010	3	3	333209579000	Centro-Oeste	Veg.&Animal derivatives
-2010	3	15	176976985000	Centro-Oeste	Metals
-2010	3	8	152303891000	Centro-Oeste	Animal
-2010	3	14	132828943000	Centro-Oeste	Precious metals
-2010	3	9	110624148000	Centro-Oeste	Wood Prod
-2010	3	6	66165670000	Centro-Oeste	Chemicals
-2010	3	17	39641349000	Centro-Oeste	Transports
-2010	3	16	34021829000	Centro-Oeste	Machines
-2010	3	22	26417962000	Centro-Oeste	Not specified
-2010	3	13	11527491000	Centro-Oeste	Articles of Stone and Other Materials
 2010	3	12	10915645000	Centro-Oeste	Shoes, Hats and Similar
-2010	3	7	7808067000	Centro-Oeste	Plastics and Rubbers
-2010	3	20	6426195000	Centro-Oeste	Miscelaneous
+2010	3	13	11527491000	Centro-Oeste	Articles of Stone and Other Materials
+2010	3	14	132828943000	Centro-Oeste	Precious metals
+2010	3	15	176976985000	Centro-Oeste	Metals
+2010	3	16	34021829000	Centro-Oeste	Machines
+2010	3	17	39641349000	Centro-Oeste	Transports
 2010	3	18	3136345000	Centro-Oeste	Instruments
 2010	3	19	62050000	Centro-Oeste	Arms and Ammo
+2010	3	20	6426195000	Centro-Oeste	Miscelaneous
 2010	3	21	9635000	Centro-Oeste	Art and Antiques

@@ -1,22 +1,22 @@
-Year	ID BRA	ID HS	Exports	RegName	ExpSection
-2013	3	2	2407212689250	Centro-Oeste	Vegetable Prod
-2013	3	4	1808416786800	Centro-Oeste	Food Kinds
+Year	ID_BRA	ID_HS	Exports	RegName	ExpSection
 2013	3	1	1935813635000	Centro-Oeste	Animal Prod
-2013	3	10	1080096290000	Centro-Oeste	Paper Prod
-2013	3	5	1044261526000	Centro-Oeste	Mineral Prod
-2013	3	11	651775131000	Centro-Oeste	Textiles
-2013	3	15	532444978000	Centro-Oeste	Metals
-2013	3	8	470149022000	Centro-Oeste	Animal
+2013	3	2	2407212689250	Centro-Oeste	Vegetable Prod
 2013	3	3	375166638000	Centro-Oeste	Veg.&Animal derivatives
-2013	3	14	325729623000	Centro-Oeste	Precious metals
-2013	3	9	99892918000	Centro-Oeste	Wood Prod
+2013	3	4	1808416786800	Centro-Oeste	Food Kinds
+2013	3	5	1044261526000	Centro-Oeste	Mineral Prod
 2013	3	6	75090998000	Centro-Oeste	Chemicals
-2013	3	22	64586739000	Centro-Oeste	Not specified
+2013	3	7	7884986000	Centro-Oeste	Plastics and Rubbers
+2013	3	8	470149022000	Centro-Oeste	Animal
+2013	3	9	99892918000	Centro-Oeste	Wood Prod
+2013	3	10	1080096290000	Centro-Oeste	Paper Prod
+2013	3	11	651775131000	Centro-Oeste	Textiles
+2013	3	12	6757353000	Centro-Oeste	Shoes, Hats and Similar
+2013	3	13	15324422000	Centro-Oeste	Articles of Stone and Other Materials
+2013	3	14	325729623000	Centro-Oeste	Precious metals
+2013	3	15	532444978000	Centro-Oeste	Metals
 2013	3	16	40481788000	Centro-Oeste	Machines
 2013	3	17	15447050000	Centro-Oeste	Transports
-2013	3	13	15324422000	Centro-Oeste	Articles of Stone and Other Materials
-2013	3	7	7884986000	Centro-Oeste	Plastics and Rubbers
-2013	3	12	6757353000	Centro-Oeste	Shoes, Hats and Similar
-2013	3	20	6241380000	Centro-Oeste	Miscelaneous
 2013	3	18	1040146000	Centro-Oeste	Instruments
+2013	3	19	0	Centro-Oeste	Arms and Ammo
+2013	3	20	6241380000	Centro-Oeste	Miscelaneous
 2013	3	21	4112000	Centro-Oeste	Art and Antiques

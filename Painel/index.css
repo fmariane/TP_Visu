@@ -42,7 +42,7 @@ footer {
 #buttons{
 	position:absolute;
 	top:410px;
-	left:60px; 
+	left:400px; 
 }
 
 
@@ -65,8 +65,19 @@ div.tooltipEvasion {
     color: #FFFFFF;  
 }
 
+#names{
+	position:absolute;
+	float: middle;
+	top:1000px;
+	left:85%;
+}
+
 #evasion{
-    margin: 0px;
+	position:absolute;
+	float:left;
+  margin: 0px;
+	top: 800px;
+	left:50px
 }
 #schoolLevel {
     position: relative;
@@ -156,36 +167,36 @@ div.tooltipDonut {
 
 #squareOne {    
 position:absolute;
-top:0px;
-left:10px;
-width:400px;
-height: 550px; 
+top:50px;
+left:300px;
+width:350px;
+height: 350px; 
 }
 #squareTwo {    
 position:absolute;
-top:100px;
-left:370px;
-width:400px;
-height: 320px;
+top:130px;
+left:700px;
+width:450px;
+height: 280px;
 }
 #squareThree {    
 position:absolute;
-top:440px;
-left:410px;
+top:450px;
+left:300px;
 width:270px;
 height: 270px;
 }
 #squareFour {    
 position:absolute;
-top:460px;
-left:690px;
+top:480px;
+left:600px;
 width:300px;
 height: 300px;
 }
 #squareFive {    
 position:absolute;
-top:470px;
-left:10px;
+top:440px;
+left:850px;
 width:380px;
 height: 280px;
 }

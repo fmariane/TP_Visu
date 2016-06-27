@@ -1,22 +1,22 @@
-Year	ID BRA	ID HS	Exports	RegName	ExpSection
-2009	1	5	1947975075	Norte	Mineral Prod
-2009	1	6	1278313405	Norte	Chemicals
-2009	1	15	1159985751	Norte	Metals
+Year	ID_BRA	ID_HS	Exports	RegName	ExpSection
 2009	1	1	717216337	Norte	Animal Prod
 2009	1	2	503560945	Norte	Vegetable Prod
-2009	1	16	467931799	Norte	Machines
-2009	1	9	415821331	Norte	Wood Prod
-2009	1	4	206417334	Norte	Food Kinds
-2009	1	17	130118718	Norte	Transports
-2009	1	10	95296218	Norte	Paper Prod
-2009	1	22	62018682	Norte	Not specified
-2009	1	14	51200277	Norte	Precious metals
 2009	1	3	41091390	Norte	Veg.&Animal derivatives
-2009	1	20	22295833	Norte	Miscelaneous
-2009	1	8	18544683	Norte	Animal
-2009	1	18	7580324	Norte	Instruments
+2009	1	4	206417334	Norte	Food Kinds
+2009	1	5	1947975075	Norte	Mineral Prod
+2009	1	6	1278313405	Norte	Chemicals
 2009	1	7	4008576	Norte	Plastics and Rubbers
-2009	1	13	1959067	Norte	Articles of Stone and Other Materials
+2009	1	8	18544683	Norte	Animal
+2009	1	9	415821331	Norte	Wood Prod
+2009	1	10	95296218	Norte	Paper Prod
 2009	1	11	860015	Norte	Textiles
 2009	1	12	182918	Norte	Shoes, Hats and Similar
+2009	1	13	1959067	Norte	Articles of Stone and Other Materials
+2009	1	14	51200277	Norte	Precious metals
+2009	1	15	1159985751	Norte	Metals
+2009	1	16	467931799	Norte	Machines
+2009	1	17	130118718	Norte	Transports
+2009	1	18	7580324	Norte	Instruments
+2009	1	19	0	Norte	Arms and Ammo
+2009	1	20	22295833	Norte	Miscelaneous
 2009	1	21	55	Norte	Art and Antiques

@@ -1,23 +1,22 @@
-Year	ID BRA	ID HS	Exports	RegName	ExpSection
-2013	1	5	2108113131775	Norte	Mineral Prod
+Year	ID_BRA	ID_HS	Exports	RegName	ExpSection
 2013	1	1	1695522999000	Norte	Animal Prod
 2013	1	2	1201558128000	Norte	Vegetable Prod
-2013	1	6	1178688645000	Norte	Chemicals
-2013	1	15	1107187295000	Norte	Metals
-2013	1	4	402836028000	Norte	Food Kinds
-2013	1	9	333088612000	Norte	Wood Prod
-2013	1	17	260632723000	Norte	Transports
-2013	1	14	254183380000	Norte	Precious metals
-2013	1	16	218785766000	Norte	Machines
 2013	1	3	135956265000	Norte	Veg.&Animal derivatives
-2013	1	22	87640329000	Norte	Not specified
-2013	1	8	86219589000	Norte	Animal
-2013	1	20	30096421000	Norte	Miscelaneous
+2013	1	4	402836028000	Norte	Food Kinds
+2013	1	5	2108113131775	Norte	Mineral Prod
+2013	1	6	1178688645000	Norte	Chemicals
 2013	1	7	11984405000	Norte	Plastics and Rubbers
-2013	1	18	8508480000	Norte	Instruments
+2013	1	8	86219589000	Norte	Animal
+2013	1	9	333088612000	Norte	Wood Prod
 2013	1	10	5392594000	Norte	Paper Prod
-2013	1	13	3375920000	Norte	Articles of Stone and Other Materials
 2013	1	11	1561181000	Norte	Textiles
 2013	1	12	1047515000	Norte	Shoes, Hats and Similar
-2013	1	21	13844000	Norte	Art and Antiques
+2013	1	13	3375920000	Norte	Articles of Stone and Other Materials
+2013	1	14	254183380000	Norte	Precious metals
+2013	1	15	1107187295000	Norte	Metals
+2013	1	16	218785766000	Norte	Machines
+2013	1	17	260632723000	Norte	Transports
+2013	1	18	8508480000	Norte	Instruments
 2013	1	19	478000	Norte	Arms and Ammo
+2013	1	20	30096421000	Norte	Miscelaneous
+2013	1	21	13844000	Norte	Art and Antiques

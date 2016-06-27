@@ -1,23 +1,22 @@
-Year	ID BRA	ID HS	Exports	RegName	ExpSection
+Year	ID_BRA	ID_HS	Exports	RegName	ExpSection
 2010	5	1	7802550243000	Sul	Animal Prod
-2010	5	4	7683344296000	Sul	Food Kinds
 2010	5	2	5584172634000	Sul	Vegetable Prod
+2010	5	3	902043560000	Sul	Veg.&Animal derivatives
+2010	5	4	7683344296000	Sul	Food Kinds
+2010	5	5	838367154000	Sul	Mineral Prod
+2010	5	6	1241770997000	Sul	Chemicals
+2010	5	7	1534038434000	Sul	Plastics and Rubbers
+2010	5	8	798965110000	Sul	Animal
+2010	5	9	1203725450000	Sul	Wood Prod
+2010	5	10	831314440000	Sul	Paper Prod
+2010	5	11	561913838000	Sul	Textiles
+2010	5	12	867246617000	Sul	Shoes, Hats and Similar
+2010	5	13	307302896000	Sul	Articles of Stone and Other Materials
+2010	5	14	73009690000	Sul	Precious metals
+2010	5	15	809424223000	Sul	Metals
 2010	5	16	4429449006000	Sul	Machines
 2010	5	17	2974755723000	Sul	Transports
-2010	5	7	1534038434000	Sul	Plastics and Rubbers
-2010	5	6	1241770997000	Sul	Chemicals
-2010	5	9	1203725450000	Sul	Wood Prod
-2010	5	3	902043560000	Sul	Veg.&Animal derivatives
-2010	5	12	867246617000	Sul	Shoes, Hats and Similar
-2010	5	5	838367154000	Sul	Mineral Prod
-2010	5	10	831314440000	Sul	Paper Prod
-2010	5	15	809424223000	Sul	Metals
-2010	5	8	798965110000	Sul	Animal
-2010	5	20	683363438000	Sul	Miscelaneous
-2010	5	11	561913838000	Sul	Textiles
-2010	5	22	409487144000	Sul	Not specified
-2010	5	13	307302896000	Sul	Articles of Stone and Other Materials
-2010	5	19	149970259000	Sul	Arms and Ammo
 2010	5	18	139963175000	Sul	Instruments
-2010	5	14	73009690000	Sul	Precious metals
+2010	5	19	149970259000	Sul	Arms and Ammo
+2010	5	20	683363438000	Sul	Miscelaneous
 2010	5	21	524649000	Sul	Art and Antiques

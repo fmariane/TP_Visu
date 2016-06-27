@@ -1,22 +1,22 @@
-Year	ID BRA	ID HS	Exports	RegName	ExpSection
+Year	ID_BRA	ID_HS	Exports	RegName	ExpSection
+2013	2	1	105588656000	Nordeste	Animal Prod
 2013	2	2	2375158536000	Nordeste	Vegetable Prod
-2013	2	17	2292085241000	Nordeste	Transports
-2013	2	6	2253651100000	Nordeste	Chemicals
-2013	2	5	1908712010000	Nordeste	Mineral Prod
-2013	2	10	1687691169000	Nordeste	Paper Prod
+2013	2	3	124506627000	Nordeste	Veg.&Animal derivatives
 2013	2	4	1640999756000	Nordeste	Food Kinds
-2013	2	15	1633562408000	Nordeste	Metals
+2013	2	5	1908712010000	Nordeste	Mineral Prod
+2013	2	6	2253651100000	Nordeste	Chemicals
 2013	2	7	563899041000	Nordeste	Plastics and Rubbers
+2013	2	8	339220110000	Nordeste	Animal
+2013	2	9	843813000	Nordeste	Wood Prod
+2013	2	10	1687691169000	Nordeste	Paper Prod
 2013	2	11	533086385000	Nordeste	Textiles
 2013	2	12	517681152000	Nordeste	Shoes, Hats and Similar
-2013	2	14	448643067000	Nordeste	Precious metals
-2013	2	8	339220110000	Nordeste	Animal
-2013	2	22	250041998000	Nordeste	Not specified
-2013	2	16	224426585000	Nordeste	Machines
-2013	2	3	124506627000	Nordeste	Veg.&Animal derivatives
-2013	2	1	105588656000	Nordeste	Animal Prod
 2013	2	13	29868984000	Nordeste	Articles of Stone and Other Materials
+2013	2	14	448643067000	Nordeste	Precious metals
+2013	2	15	1633562408000	Nordeste	Metals
+2013	2	16	224426585000	Nordeste	Machines
+2013	2	17	2292085241000	Nordeste	Transports
 2013	2	18	5932309000	Nordeste	Instruments
+2013	2	19	0	Nordeste	Arms and Ammo
 2013	2	20	4960431000	Nordeste	Miscelaneous
-2013	2	9	843813000	Nordeste	Wood Prod
 2013	2	21	19348000	Nordeste	Art and Antiques

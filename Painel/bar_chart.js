@@ -112,7 +112,7 @@
 	
 		xAxis = d3.svg.axis()
 		  .scale(scale)
-		  .tickSize(-height + 2*margin + axisMargin + 259)
+		  .tickSize(-height + 2*margin + axisMargin + 221)
 		  .orient("bottom")
 		  .ticks(4);
 		  

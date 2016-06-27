@@ -16,7 +16,7 @@ var g = svg.append("g");
 
 // Align center of Brazil to center of map
 var projection = d3.geo.mercator()
-  .scale(500)
+  .scale(350)
   .center([-52, -15])
   .translate([width / 2, height / 2]);
 
@@ -108,7 +108,7 @@ function ready(error, shp) {
       
 		tooltip
 			.classed("hidden", false)
-			.attr("style", "left:"+(d3.event.pageX - 20)+"px;top:"+(d3.event.pageY - 60)+"px")
+			.attr("style", "left:"+(d3.event.pageX - 300)+"px;top:"+(d3.event.pageY - 60)+"px")
 			.html("<strong>Year: "+Year[idYear]+"<br/>"+"</strong>"+"<strong>Subunit: "+subunitOver+"<br/>"+"</strong>"+"<strong>Transfer: R$"+transfer+"<br/>"+"</strong>")
 		})
 		.on("mouseout",  function(d,i) {

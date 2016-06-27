@@ -1,23 +1,22 @@
-Year	ID BRA	ID HS	Exports	RegName	ExpSection
-2009	4	5	20381592700	Sudeste	Mineral Prod
-2009	4	4	11854702334	Sudeste	Food Kinds
-2009	4	17	10277800996	Sudeste	Transports
-2009	4	16	9446638105	Sudeste	Machines
-2009	4	15	8984966540	Sudeste	Metals
-2009	4	2	6632304897	Sudeste	Vegetable Prod
-2009	4	6	4577417774	Sudeste	Chemicals
-2009	4	10	2756969837	Sudeste	Paper Prod
-2009	4	7	2564329926	Sudeste	Plastics and Rubbers
+Year	ID_BRA	ID_HS	Exports	RegName	ExpSection
 2009	4	1	2542382908	Sudeste	Animal Prod
-2009	4	22	2181774573	Sudeste	Not specified
-2009	4	14	1266863158	Sudeste	Precious metals
-2009	4	13	1098114552	Sudeste	Articles of Stone and Other Materials
-2009	4	11	645803718	Sudeste	Textiles
-2009	4	18	578050719	Sudeste	Instruments
-2009	4	8	390920897	Sudeste	Animal
-2009	4	20	303428232	Sudeste	Miscelaneous
+2009	4	2	6632304897	Sudeste	Vegetable Prod
 2009	4	3	281311316	Sudeste	Veg.&Animal derivatives
-2009	4	19	173970677	Sudeste	Arms and Ammo
-2009	4	12	161258436	Sudeste	Shoes, Hats and Similar
+2009	4	4	11854702334	Sudeste	Food Kinds
+2009	4	5	20381592700	Sudeste	Mineral Prod
+2009	4	6	4577417774	Sudeste	Chemicals
+2009	4	7	2564329926	Sudeste	Plastics and Rubbers
+2009	4	8	390920897	Sudeste	Animal
 2009	4	9	121493569	Sudeste	Wood Prod
+2009	4	10	2756969837	Sudeste	Paper Prod
+2009	4	11	645803718	Sudeste	Textiles
+2009	4	12	161258436	Sudeste	Shoes, Hats and Similar
+2009	4	13	1098114552	Sudeste	Articles of Stone and Other Materials
+2009	4	14	1266863158	Sudeste	Precious metals
+2009	4	15	8984966540	Sudeste	Metals
+2009	4	16	9446638105	Sudeste	Machines
+2009	4	17	10277800996	Sudeste	Transports
+2009	4	18	578050719	Sudeste	Instruments
+2009	4	19	173970677	Sudeste	Arms and Ammo
+2009	4	20	303428232	Sudeste	Miscelaneous
 2009	4	21	33166947	Sudeste	Art and Antiques

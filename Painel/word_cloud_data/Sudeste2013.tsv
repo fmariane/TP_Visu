@@ -1,23 +1,22 @@
-Year	ID BRA	ID HS	Exports	RegName	ExpSection
-2013	4	5	19066668365000	Sudeste	Mineral Prod
-2013	4	4	15912263845000	Sudeste	Food Kinds
-2013	4	17	15608349862000	Sudeste	Transports
-2013	4	16	12400904296000	Sudeste	Machines
-2013	4	15	10512450254000	Sudeste	Metals
-2013	4	2	10234052481000	Sudeste	Vegetable Prod
-2013	4	6	5760345005000	Sudeste	Chemicals
-2013	4	22	3927050282000	Sudeste	Not specified
+Year	ID_BRA	ID_HS	Exports	RegName	ExpSection
 2013	4	1	3774312931000	Sudeste	Animal Prod
-2013	4	10	3605575344000	Sudeste	Paper Prod
-2013	4	7	3274794216000	Sudeste	Plastics and Rubbers
-2013	4	14	2080190518000	Sudeste	Precious metals
-2013	4	13	1587020443000	Sudeste	Articles of Stone and Other Materials
-2013	4	18	764037266000	Sudeste	Instruments
-2013	4	8	714796903000	Sudeste	Animal
-2013	4	11	651671250000	Sudeste	Textiles
-2013	4	20	342639831000	Sudeste	Miscelaneous
+2013	4	2	10234052481000	Sudeste	Vegetable Prod
 2013	4	3	285302397000	Sudeste	Veg.&Animal derivatives
-2013	4	19	198012416000	Sudeste	Arms and Ammo
-2013	4	12	180016237000	Sudeste	Shoes, Hats and Similar
+2013	4	4	15912263845000	Sudeste	Food Kinds
+2013	4	5	19066668365000	Sudeste	Mineral Prod
+2013	4	6	5760345005000	Sudeste	Chemicals
+2013	4	7	3274794216000	Sudeste	Plastics and Rubbers
+2013	4	8	714796903000	Sudeste	Animal
 2013	4	9	140328655000	Sudeste	Wood Prod
+2013	4	10	3605575344000	Sudeste	Paper Prod
+2013	4	11	651671250000	Sudeste	Textiles
+2013	4	12	180016237000	Sudeste	Shoes, Hats and Similar
+2013	4	13	1587020443000	Sudeste	Articles of Stone and Other Materials
+2013	4	14	2080190518000	Sudeste	Precious metals
+2013	4	15	10512450254000	Sudeste	Metals
+2013	4	16	12400904296000	Sudeste	Machines
+2013	4	17	15608349862000	Sudeste	Transports
+2013	4	18	764037266000	Sudeste	Instruments
+2013	4	19	198012416000	Sudeste	Arms and Ammo
+2013	4	20	342639831000	Sudeste	Miscelaneous
 2013	4	21	121215888000	Sudeste	Art and Antiques

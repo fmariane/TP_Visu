@@ -1,22 +1,22 @@
-Year	ID BRA	ID HS	Exports	RegName	ExpSection
-2010	2	5	2109486385000	Nordeste	Mineral Prod
-2010	2	4	2005348099000	Nordeste	Food Kinds
-2010	2	6	1898122716000	Nordeste	Chemicals
-2010	2	2	1776496717000	Nordeste	Vegetable Prod
-2010	2	10	1675780248000	Nordeste	Paper Prod
-2010	2	15	1233069398000	Nordeste	Metals
-2010	2	7	645088622000	Nordeste	Plastics and Rubbers
-2010	2	12	594723035000	Nordeste	Shoes, Hats and Similar
-2010	2	17	554802612000	Nordeste	Transports
-2010	2	11	547899659000	Nordeste	Textiles
-2010	2	14	319645519000	Nordeste	Precious metals
-2010	2	8	291512955000	Nordeste	Animal
-2010	2	22	271296077000	Nordeste	Not specified
-2010	2	16	171775071000	Nordeste	Machines
-2010	2	3	140777076000	Nordeste	Veg.&Animal derivatives
+Year	ID_BRA	ID_HS	Exports	RegName	ExpSection
 2010	2	1	133088208000	Nordeste	Animal Prod
-2010	2	13	35707767000	Nordeste	Articles of Stone and Other Materials
-2010	2	20	19730579000	Nordeste	Miscelaneous
-2010	2	18	4570362000	Nordeste	Instruments
+2010	2	2	1776496717000	Nordeste	Vegetable Prod
+2010	2	3	140777076000	Nordeste	Veg.&Animal derivatives
+2010	2	4	2005348099000	Nordeste	Food Kinds
+2010	2	5	2109486385000	Nordeste	Mineral Prod
+2010	2	6	1898122716000	Nordeste	Chemicals
+2010	2	7	645088622000	Nordeste	Plastics and Rubbers
+2010	2	8	291512955000	Nordeste	Animal
 2010	2	9	3770806000	Nordeste	Wood Prod
+2010	2	10	1675780248000	Nordeste	Paper Prod
+2010	2	11	547899659000	Nordeste	Textiles
+2010	2	12	594723035000	Nordeste	Shoes, Hats and Similar
+2010	2	13	35707767000	Nordeste	Articles of Stone and Other Materials
+2010	2	14	319645519000	Nordeste	Precious metals
+2010	2	15	1233069398000	Nordeste	Metals
+2010	2	16	171775071000	Nordeste	Machines
+2010	2	17	554802612000	Nordeste	Transports
+2010	2	18	4570362000	Nordeste	Instruments
+2010	2	19	0	Nordeste	Arms and Ammo
+2010	2	20	19730579000	Nordeste	Miscelaneous
 2010	2	21	28299000	Nordeste	Art and Antiques

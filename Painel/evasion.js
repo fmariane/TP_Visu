@@ -162,7 +162,7 @@ var subtitleScale = function(container) {
   .attr("fill", function(d,i) {if(i>10) {return "#F0F0F0";} else {return "#696969";}}) 
 }
  
-subtitleSchoolLevel ("#schoolLevel")
+subtitleSchoolLevel("#schoolLevel");
 heatmapChart(dataBase[0], "#evasionNorth");
 heatmapChart(dataBase[1], "#evasionNortheast");
 heatmapChart(dataBase[2], "#evasionMidwest");

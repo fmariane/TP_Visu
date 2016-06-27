@@ -6,42 +6,42 @@
     var expScale = d3.scale.linear().range([5, 100]);
     var color = d3.scale.category20(); //escala de cor
 	
-	var dataBase2009 = ["Norte2009.tsv", "Nordeste2009.tsv" , "CenOeste2009.tsv" ,"Sudeste2009.tsv" ,"Sul2009.tsv"];
-	var dataBase2010 = ["Norte2010.tsv", "Nordeste2010.tsv" , "CenOeste2010.tsv" ,"Sudeste2010.tsv" ,"Sul2010.tsv"];
-	var dataBase2011 = ["Norte2011.tsv", "Nordeste2011.tsv" , "CenOeste2011.tsv" ,"Sudeste2011.tsv" ,"Sul2011.tsv"];
-	var dataBase2012 = ["Norte2012.tsv", "Nordeste2012.tsv" , "CenOeste2012.tsv" ,"Sudeste2012.tsv" ,"Sul2012.tsv"];
-	var dataBase2013 = ["Norte2013.tsv", "Nordeste2013.tsv" , "CenOeste2013.tsv" ,"Sudeste2013.tsv" ,"Sul2013.tsv"];
+	var cloud_bases_de_dados2009 = ["Norte2009.tsv", "Nordeste2009.tsv" , "CenOeste2009.tsv" ,"Sudeste2009.tsv" ,"Sul2009.tsv"];
+	var cloud_bases_de_dados2010 = ["Norte2010.tsv", "Nordeste2010.tsv" , "CenOeste2010.tsv" ,"Sudeste2010.tsv" ,"Sul2010.tsv"];
+	var cloud_bases_de_dados2011 = ["Norte2011.tsv", "Nordeste2011.tsv" , "CenOeste2011.tsv" ,"Sudeste2011.tsv" ,"Sul2011.tsv"];
+	var cloud_bases_de_dados2012 = ["Norte2012.tsv", "Nordeste2012.tsv" , "CenOeste2012.tsv" ,"Sudeste2012.tsv" ,"Sul2012.tsv"];
+	var cloud_bases_de_dados2013 = ["Norte2013.tsv", "Nordeste2013.tsv" , "CenOeste2013.tsv" ,"Sudeste2013.tsv" ,"Sul2013.tsv"];
 	
 	reload_words(0,0);
  
-	function reload_words(idYear, subunit){	
+	function reload_words(idYear, reg){	
 
     var database = [];
 	if(idYear == 0)
 	{
 		//norte
-		database = dataBase2009[subunit];
+		database = cloud_bases_de_dados2009[reg];
 		
 	}
 	else if(idYear == 1)
 	{
 		//nordeste
-		database = dataBase2010[subunit];
+		database = cloud_bases_de_dados2010[reg];
 	}
 	else if(idYear == 2)
 	{
 		//nordeste
-		database = dataBase2011[subunit];
+		database = cloud_bases_de_dados2011[reg];
 	}
 	else if(idYear == 3)
 	{
 		//nordeste
-		database = dataBase2012[subunit];
+		database = cloud_bases_de_dados2012[reg];
 	}
 	else if(idYear == 4)
 	{
 		//nordeste
-		database = dataBase2013[subunit];
+		database = cloud_bases_de_dados2013[reg];
 	}
   
   

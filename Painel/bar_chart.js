@@ -1,23 +1,23 @@
-	var dataBase2009 = ["bar_data/cur_sup_subunit_1_2009.tsv","bar_data/cur_sup_subunit_2_2009.tsv","bar_data/cur_sup_subunit_3_2009.tsv","bar_data/cur_sup_subunit_4_2009.tsv","bar_data/cur_sup_subunit_5_2009.tsv"];
-	var dataBase2010 = ["bar_data/cur_sup_subunit_1_2010.tsv","bar_data/cur_sup_subunit_2_2010.tsv","bar_data/cur_sup_subunit_3_2010.tsv","bar_data/cur_sup_subunit_4_2010.tsv","bar_data/cur_sup_subunit_5_2010.tsv"];
+	var bar_bases_de_dados2009 = ["bar_data/cur_sup_reg_1_2009.tsv","bar_data/cur_sup_reg_2_2009.tsv","bar_data/cur_sup_reg_3_2009.tsv","bar_data/cur_sup_reg_4_2009.tsv","bar_data/cur_sup_reg_5_2009.tsv"];
+	var bar_bases_de_dados2010 = ["bar_data/cur_sup_reg_1_2010.tsv","bar_data/cur_sup_reg_2_2010.tsv","bar_data/cur_sup_reg_3_2010.tsv","bar_data/cur_sup_reg_4_2010.tsv","bar_data/cur_sup_reg_5_2010.tsv"];
 		
 
 	reload_bars(0,0);
 	
-    function reload_bars(idYear, subunit) {
+    function reload_bars(idYear, reg) {
 		var database = [];
 		var colors = ["#957AFF", "#004DFF", "#D8FF3D", "#00FF33", "#FF3300"];
 		var color_aux = 0;
 		if(idYear == 0)
 		{
 			//norte
-			database = dataBase2009[subunit];
-			colors_aux = colors[subunit];
+			database = bar_bases_de_dados2009[reg];
+			colors_aux = colors[reg];
 		}
 		else if(idYear == 1)
 		{
 			//nordeste
-			database = dataBase2010[subunit];
+			database = bar_bases_de_dados2010[reg];
 		}
 	
 	

@@ -1,43 +1,43 @@
-var formatAsPercentage = d3.format("%"),
-	formatAsPercentage1Dec = d3.format(".1%"),
-	formatAsInteger = d3.format(",");
+var 	formatAsPercentage = d3.format("%"),
+		formatAsPercentage1Dec = d3.format(".1%"),
+		formatAsInteger = d3.format(",");
 
-var dataBase2009 = ["donut_data/north2009.tsv","donut_data/northeast2009.tsv", "donut_data/midwest2009.tsv", "donut_data/southeast2009.tsv", "donut_data/south2009.tsv"];
-var dataBase2010 = ["donut_data/north2010.tsv","donut_data/northeast2010.tsv", "donut_data/midwest2010.tsv", "donut_data/southeast2010.tsv", "donut_data/south2010.tsv"];
-var dataBase2011 = ["donut_data/north2011.tsv","donut_data/northeast2011.tsv", "donut_data/midwest2011.tsv", "donut_data/southeast2011.tsv", "donut_data/south2011.tsv"];
-var dataBase2012 = ["donut_data/north2012.tsv","donut_data/northeast2012.tsv", "donut_data/midwest2012.tsv", "donut_data/southeast2012.tsv", "donut_data/south2012.tsv"];
-var dataBase2013 = ["donut_data/north2013.tsv","donut_data/northeast2013.tsv", "donut_data/midwest2013.tsv", "donut_data/southeast2013.tsv", "donut_data/south2013.tsv"];
+var donut_bases_de_dados2009 = ["donut_data/north2009.tsv","donut_data/northeast2009.tsv", "donut_data/midwest2009.tsv", "donut_data/southeast2009.tsv", "donut_data/south2009.tsv"];
+var donut_bases_de_dados2010 = ["donut_data/north2010.tsv","donut_data/northeast2010.tsv", "donut_data/midwest2010.tsv", "donut_data/southeast2010.tsv", "donut_data/south2010.tsv"];
+var donut_bases_de_dados2011 = ["donut_data/north2011.tsv","donut_data/northeast2011.tsv", "donut_data/midwest2011.tsv", "donut_data/southeast2011.tsv", "donut_data/south2011.tsv"];
+var donut_bases_de_dados2012 = ["donut_data/north2012.tsv","donut_data/northeast2012.tsv", "donut_data/midwest2012.tsv", "donut_data/southeast2012.tsv", "donut_data/south2012.tsv"];
+var donut_bases_de_dados2013 = ["donut_data/north2013.tsv","donut_data/northeast2013.tsv", "donut_data/midwest2013.tsv", "donut_data/southeast2013.tsv", "donut_data/south2013.tsv"];
 
 reload_donut(0,0);
 
-function reload_donut(idYear, subunit){
+function reload_donut(idYear, reg){
 	
 	var database = [];
 	if(idYear == 0)
 	{
 		//norte
-		database = dataBase2009[subunit];
+		database = donut_bases_de_dados2009[reg];
 		
 	}
 	else if(idYear == 1)
 	{
 		//nordeste
-		database = dataBase2010[subunit];
+		database = donut_bases_de_dados2010[reg];
 	}
 	else if(idYear == 2)
 	{
 		//nordeste
-		database = dataBase2011[subunit];
+		database = donut_bases_de_dados2011[reg];
 	}
 	else if(idYear == 3)
 	{
 		//nordeste
-		database = dataBase2012[subunit];
+		database = donut_bases_de_dados2012[reg];
 	}
 	else if(idYear == 4)
 	{
 		//nordeste
-		database = dataBase2013[subunit];
+		database = donut_bases_de_dados2013[reg];
 	}
 
 	
@@ -91,7 +91,8 @@ function reload_donut(idYear, subunit){
     				
     arcs.append("svg:path")
 		.attr("fill", function(d, i) { return color(i); } ) //set the color for each slice to be chosen from the color function defined above
-		.attr("d", arc)     //this creates the actual SVG path using the associated data (pie) with the arc drawing function	
+		.attr("d", arc)     //this creates the actual SVG path using the associated data (pie) with the arc drawing function
+		//.append("svg:title") //mouseover title showing the figures	
 	
     d3.selectAll("g.slice").selectAll("path").transition()
 		.duration(1000)

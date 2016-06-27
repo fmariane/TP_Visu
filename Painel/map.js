@@ -126,6 +126,8 @@ function ready(error, shp) {
 					d3.selectAll(".subunitNorte").style("fill", colorsChecked[0]);
 					subunitChecked = 1;
 					reload_bars(idYear,0);
+					reload_donut(idYear,0);
+					reload_words(idYear, 0);
 					global_reg = 0;
 					//ano, norte			
 				}
@@ -140,6 +142,8 @@ function ready(error, shp) {
 				d3.selectAll(".subunitNordeste").style("fill", colorsChecked[1]);
 					subunitChecked = 1;
 					reload_bars(idYear,1);
+					reload_donut(idYear,1);
+					reload_words(idYear, 1);
 					global_reg = 1;
 				}
 			else if (d.id == 'DF' || d.id == 'GO' || d.id == 'MS' || d.id == 'MT') {
@@ -153,6 +157,8 @@ function ready(error, shp) {
 					d3.selectAll(".subunitCentroOeste").style("fill", colorsChecked[2]);
 					subunitChecked = 1;
 					reload_bars(idYear,2);
+					reload_donut(idYear,2);
+					reload_words(idYear, 2);
 					global_reg = 2;
 				}
 			else if (d.id == 'ES' || d.id == 'MG' || d.id == 'RJ'|| d.id == 'SP') {
@@ -166,6 +172,8 @@ function ready(error, shp) {
 					d3.selectAll(".subunitSudeste").style("fill", colorsChecked[3]);
 					subunitChecked = 1;
 					reload_bars(idYear,3);
+					reload_donut(idYear,3);
+					reload_words(idYear, 3);
 					global_reg = 3;
 			}
 			else if (d.id == 'PR' || d.id == 'RS' || d.id == 'SC') {
@@ -179,6 +187,8 @@ function ready(error, shp) {
 				d3.selectAll(".subunitSul").style("fill", colorsChecked[4]);
 				subunitChecked = 1;
 				reload_bars(idYear,4);
+				reload_donut(idYear,4);
+				reload_words(idYear, 4);
 				global_reg = 4;
 			}})
 		.attr("d", path);
@@ -199,6 +209,8 @@ function ready(error, shp) {
 function setYear(id){
   idYear = id;
   reload_bars(idYear,global_reg);
+  reload_donut(idYear,global_reg);
+  reload_words(idYear, global_reg);
   d3.selectAll(".subunitSul").style("opacity", function(){return 0.2+transferSul[idYear]/transferSum[idYear];});
   d3.selectAll(".subunitSudeste").style("opacity", function(){return 0.2+transferSudeste[idYear]/transferSum[idYear];});
   d3.selectAll(".subunitNorte").style("opacity", function(){return 0.2+transferNorte[idYear]/transferSum[idYear];});

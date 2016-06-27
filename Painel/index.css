@@ -45,6 +45,60 @@ footer {
 	left:60px; 
 }
 
+
+rect.contour {
+    stroke: #E6E6E6;
+    stroke-width:2px;   
+}
+
+div.tooltipEvasion {
+    position: absolute;    
+    text-align: center;    
+    width: 90px;          
+    height: 70px;        
+    padding: 2px;      
+    font: 10px Tahoma;    
+    background: rgba(0, 0, 0, 0.8);
+    border: 0px;    
+    border-radius: 2px;    
+    pointer-events: none;    
+    color: #FFFFFF;  
+}
+
+#evasion{
+    margin: 0px;
+}
+#schoolLevel {
+    position: relative;
+    float: left;
+    margin: 0px;
+}
+#evasionNorth {
+    position: relative;
+    float: left;
+    margin: 0px;
+}
+#evasionNortheast {
+    position: relative;
+    float: left;
+    margin: 0px;
+}
+#evasionMidwest {
+    position: relative;
+    float: left;
+    margin: 0px;
+}
+#evasionSoutheast {
+    position: relative;
+    float: left;
+    margin: 0px;
+}
+#evasionSouth {
+    position: relative;
+    float: left;
+    margin: 0px;
+}
+
 .state_contour {
   fill: none;
   stroke: none;
@@ -170,7 +224,7 @@ svg {
 }
 
 .label {
-  font-size: 12px;
+  font-size: 9px;
   fill: #696969;
 }
 

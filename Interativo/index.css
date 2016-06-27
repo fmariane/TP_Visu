@@ -45,10 +45,15 @@ div.tooltip {
     border: 0px;    
     border-radius: 2px;    
     pointer-events: none;    
-    color: #FFFFFF;   
+    color: #FFFFFF;  
 }
 
 #evasion{
+    margin: 0px;
+}
+#schoolLevel {
+    position: relative;
+    float: left;
     margin: 0px;
 }
 #evasionNorth {

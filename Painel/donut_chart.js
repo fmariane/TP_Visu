@@ -1,26 +1,57 @@
-var 	formatAsPercentage = d3.format("%"),
-		formatAsPercentage1Dec = d3.format(".1%"),
-		formatAsInteger = d3.format(",");
+var formatAsPercentage = d3.format("%"),
+	formatAsPercentage1Dec = d3.format(".1%"),
+	formatAsInteger = d3.format(",");
 
+var dataBase2009 = ["donut_data/north2009.tsv","donut_data/northeast2009.tsv", "donut_data/midwest2009.tsv", "donut_data/southeast2009.tsv", "donut_data/south2009.tsv"];
+var dataBase2010 = ["donut_data/north2010.tsv","donut_data/northeast2010.tsv", "donut_data/midwest2010.tsv", "donut_data/southeast2010.tsv", "donut_data/south2010.tsv"];
+var dataBase2011 = ["donut_data/north2011.tsv","donut_data/northeast2011.tsv", "donut_data/midwest2011.tsv", "donut_data/southeast2011.tsv", "donut_data/south2011.tsv"];
+var dataBase2012 = ["donut_data/north2012.tsv","donut_data/northeast2012.tsv", "donut_data/midwest2012.tsv", "donut_data/southeast2012.tsv", "donut_data/south2012.tsv"];
+var dataBase2013 = ["donut_data/north2013.tsv","donut_data/northeast2013.tsv", "donut_data/midwest2013.tsv", "donut_data/southeast2013.tsv", "donut_data/south2013.tsv"];
 
-function dsPieChart(){
-	//centro oeste 2009
-	var sum =   1582992827.55;
-	var dataset = [
-		  {category: "ADMINISTRACAO GERAL", measure: 737142894},
-	      {category: "ASSISTENCIA HOSPITALAR E AMBULATORIAL", measure: 1595329.61},
-	      {category: "DESENVOLVIMENTO CIENTIFICO", measure: 162073.14},
-	      {category: "DIFUSAO CULTURAL", measure: 503969.4},
-	      {category: "EDUCACAO BASICA", measure: 98589778.37},
-	      {category: "EDUCACAO ESPECIAL", measure:915527.12 },
-	      {category: "EDUCACAO INFANTIL", measure: 7381878.54},
-		  {category: "ENSINO FUNDAMENTALL", measure:   2662693.30 },
-		  {category: "ENSINO PROFISSIONAL", measure: 231979224.54},
-	      {category: "ENSINO SUPERIOR", measure:94603713.31},
-	      {category: "FORMACAO DE RECURSOS HUMANOS", measure: 5459796.44},
-		  {category: "TECNOLOGIA DA INFORMACAO", measure:956282},
-	      {category: "TRANSFERENCIAS PARA A EDUCACAO BASICA", measure: 401039667.78}
-	      ];
+reload_donut(0,0);
+
+function reload_donut(idYear, subunit){
+	
+	var database = [];
+	if(idYear == 0)
+	{
+		//norte
+		database = dataBase2009[subunit];
+		
+	}
+	else if(idYear == 1)
+	{
+		//nordeste
+		database = dataBase2010[subunit];
+	}
+	else if(idYear == 2)
+	{
+		//nordeste
+		database = dataBase2011[subunit];
+	}
+	else if(idYear == 3)
+	{
+		//nordeste
+		database = dataBase2012[subunit];
+	}
+	else if(idYear == 4)
+	{
+		//nordeste
+		database = dataBase2013[subunit];
+	}
+
+	
+
+	d3.select("#squareThree").remove();
+		
+	var div = document.createElement("div");
+	div.id = "squareThree";
+
+	document.body.appendChild(div);
+	
+	d3.tsv(database,
+    function(error, data) {
+
 
 	var width = 290,
 		height = 290,
@@ -36,7 +67,7 @@ function dsPieChart(){
 	    
 	var vis = d3.select("#squareThree")
 	     .append("svg:svg")             
-	     .data([dataset])                   
+	     .data([data])                   
 		 .attr("width", width)          
 		 .attr("height", height)
 		 .append("svg:g") 
@@ -60,11 +91,10 @@ function dsPieChart(){
     				
     arcs.append("svg:path")
 		.attr("fill", function(d, i) { return color(i); } ) //set the color for each slice to be chosen from the color function defined above
-		.attr("d", arc)     //this creates the actual SVG path using the associated data (pie) with the arc drawing function
-		//.append("svg:title") //mouseover title showing the figures	
+		.attr("d", arc)     //this creates the actual SVG path using the associated data (pie) with the arc drawing function	
 	
     d3.selectAll("g.slice").selectAll("path").transition()
-		.duration(750)
+		.duration(1000)
 		.delay(10)
 		.attr("d", arcFinal);
 		
@@ -87,13 +117,22 @@ function dsPieChart(){
 	
 	var legendRectSize = 10;
 	var legendSpacing = 4;
+
+	d3.select("#squareFour").remove();
+		
+	var div = document.createElement("div");
+	div.id = "squareFour";
+
+	document.body.appendChild(div);
+
+
 	var legend = d3.select("#squareFour")
 		.append("svg")
 		.attr("width", 300)
 		.attr("height",300);
 		
 	legend.selectAll("rect")
-		.data(dataset)
+		.data(data)
 		.enter()
 		.append("rect")
         .attr("width", legendRectSize)
@@ -103,7 +142,7 @@ function dsPieChart(){
 		.attr("fill" , function(d,i){ return color(i);});
 		
 	legend.selectAll("text")
-		.data(dataset)
+		.data(data)
 		.enter()
 		.append("text")
 		.attr("x", 25)
@@ -120,7 +159,6 @@ function dsPieChart(){
 		.on("mouseout",  function(d,i) {
 			tooltipDonut.classed("hidden", true)
 		});	
+
+		});
 }
-
-dsPieChart();
-

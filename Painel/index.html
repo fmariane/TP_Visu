@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Trabalho de Visualização de Dados - 2016/1</title>    
+    <title>Brazil</title>    
     <meta charset="utf-8"/>
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <script src="https://d3js.org/d3-queue.v2.min.js"></script>
@@ -11,15 +11,34 @@
 
   </head>
   <body>
+    
+    <h1>Where the brazilian government should invest?</h1>
+    <h2>Can you answer?</h2>
 
-    <h1>Trabalho de Visualização de Dados - 2016/1</h1>
-    <h2>Mapa do Brasil</h2>
-       
-    <div id="squareOne"></div>
-	<div id="squareTwo"></div>
-	<div id="squareThree"></div>
-	<div id="squareFour"></div>
-	<div id="squareFive"></div>
+    <div id="evasion"><h3>Schoool Evasion - Brazil (2008-2014)</h3>
+      <div id="schoolLevel"></div>
+      <div id="evasionNorth"><h3>North</h3></div>
+      <div id="evasionNortheast"><h3>Northeast</h3></div>
+      <div id="evasionMidwest"><h3>Midwest</h3></div>
+      <div id="evasionSoutheast"><h3>Southeast</h3></div>
+      <div id="evasionSouth"><h3>South</h3></div>
+    </div>
+
+    <div>
+        <div id="squareOne"></div>
+    	<div id="squareTwo"></div>
+    	<div id="squareThree"></div>
+    	<div id="squareFour"></div>
+    	<div id="squareFive"></div>
+    </div>
+
+    <div>
+        <div id="squareOne2"></div>
+        <div id="squareTwo2"></div>
+        <div id="squareThree2"></div>
+        <div id="squareFour2"></div>
+        <div id="squareFive2"></div>
+    </div>
     
     <footer>Carolina Coimbra Vieira</footer>
     <footer>Celso Bernardes Silva</footer>
@@ -27,8 +46,9 @@
     <footer>Patrícia Gomes da Silva</footer>
     <footer>Pedro Campolina Diniz Rodrigues</footer>
     
+    <script type="text/javascript" src="evasion.js"></script>
+    <script type="text/javascript" src="map.js"></script>
     <script type="text/javascript" src="bar_chart.js"></script>
-    <script type="text/javascript" src="Mapa.js"></script>
 	<script type="text/javascript" src="donut_chart.js"></script>
 	<script type="text/javascript" src = "medley.js"></script>
 	<script type="text/javascript" src = "d3.layout.cloud.js"></script>

@@ -13,34 +13,23 @@ reload_donut(0,0);
 function reload_donut(idYear, reg){
 	
 	var database = [];
-	if(idYear == 0)
-	{
-		//norte
+	if(idYear == 0){
 		database = donut_bases_de_dados2009[reg];
 		
 	}
-	else if(idYear == 1)
-	{
-		//nordeste
+	else if(idYear == 1){
 		database = donut_bases_de_dados2010[reg];
 	}
-	else if(idYear == 2)
-	{
-		//nordeste
+	else if(idYear == 2){
 		database = donut_bases_de_dados2011[reg];
 	}
-	else if(idYear == 3)
-	{
-		//nordeste
+	else if(idYear == 3){
 		database = donut_bases_de_dados2012[reg];
 	}
-	else if(idYear == 4)
-	{
-		//nordeste
+	else{
 		database = donut_bases_de_dados2013[reg];
 	}
 
-	
 
 	d3.select("#squareThree").remove();
 		
@@ -57,10 +46,10 @@ function reload_donut(idYear, reg){
 		height = 290,
 		outerRadius = Math.min(width, height) / 2.8,
 	    innerRadius = outerRadius * .999,   
-        // for animation
 	    innerRadiusFinal = outerRadius * .6,
-	    innerRadiusFinal3 = outerRadius* .65,
-	    color = d3.scale.category20();   //builtin range of colors
+	    innerRadiusFinal3 = outerRadius* .65;
+	
+	var color = ["#2CA02C", "#AEC7E8", "#FF7F0E", "#FFBB78", "#1F77B4", "#98DF8A", "#D62728", "#FF9896", "#E57C7D", "#4AC2B6", "#9467BD", "#C5B0D5", "#8C564B", "#C49C94", "#E377C2", "#F7B6D2", "#7F7F7F", "#C7C7C7", "#BCBD22", "#DBDB8D", "#17BECF"];
 
 	var tooltipDonut = d3.select("#squareThree").append("div").attr("class", "tooltipDonut hidden");
 	    
@@ -90,7 +79,7 @@ function reload_donut(idYear, reg){
         .attr("class", "slice");         //allow us to style things in the slices (like text) 	              
     				
     arcs.append("svg:path")
-		.attr("fill", function(d, i) { return color(i); } ) //set the color for each slice to be chosen from the color function defined above
+		.attr("fill", function(d, i) { return color[i]; } ) //set the color for each slice to be chosen from the color function defined above
 		.attr("d", arc)     //this creates the actual SVG path using the associated data (pie) with the arc drawing function
 		//.append("svg:title") //mouseover title showing the figures	
 	
@@ -140,7 +129,7 @@ function reload_donut(idYear, reg){
         .attr("height", legendRectSize)
 		.attr("x", 10)
 		.attr("y", function(d,i){ return i * 20;} )
-		.attr("fill" , function(d,i){ return color(i);});
+		.attr("fill" , function(d,i){ return color[i];});
 		
 	legend.selectAll("text")
 		.data(data)

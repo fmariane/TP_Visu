@@ -35,7 +35,7 @@ function ready(error, shp) {
   var states = topojson.feature(shp, shp.objects.estados);
   var states_contour = topojson.mesh(shp, shp.objects.estados);
   var subunitChecked = 0;
-  var colorsChecked = ["#957AFF", "#004DFF", "#D8FF3D", "#00FF33", "#FF3300"];
+  var colorsChecked = ["#29A03C", "#D2282B", "#FF800A", "#9562BE", "#2978B3"];
 
   // Draw states
   g.selectAll(".estado")
